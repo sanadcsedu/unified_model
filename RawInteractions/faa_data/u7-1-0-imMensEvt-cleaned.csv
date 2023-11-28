@@ -1,0 +1,290 @@
+user, time, action, visualization
+p14,0:00:00,brush,bar-4
+p14,0:00:01,range select,bar-2
+p14,0:00:15,range select,bar-2
+p14,0:00:21,range select,bar-2
+p14,0:00:23,range select,bar-2
+p14,0:00:24,range select,bar-2
+p14,0:00:25,range select,bar-2
+p14,0:00:27,brush,bar-2
+p14,0:00:28,brush,bar-2
+p14,0:00:29,brush,bar-2
+p14,0:00:30,brush,bar-2
+p14,0:00:31,brush,bar-2
+p14,0:00:32,brush,bar-2
+p14,0:00:33,brush,bar-2
+p14,0:00:34,brush,bar-2
+p14,0:00:35,brush,bar-2
+p14,0:00:36,brush,bar-2
+p14,0:00:43,brush,bar-2
+p14,0:00:44,brush,bar-2
+p14,0:00:45,brush,bar-2
+p14,0:00:46,brush,bar-2
+p14,0:00:47,brush,bar-2
+p14,0:00:48,brush,bar-2
+p14,0:00:49,brush,bar-2
+p14,0:00:50,brush,bar-2
+p14,0:00:51,brush,bar-2
+p14,0:00:53,brush,bar-2
+p14,0:00:54,brush,bar-2
+p14,0:00:55,brush,bar-2
+p14,0:00:56,brush,bar-2
+p14,0:00:57,brush,bar-2
+p14,0:00:58,brush,bar-2
+p14,0:00:59,brush,bar-2
+p14,0:01:00,brush,bar-2
+p14,0:01:01,brush,bar-2
+p14,0:01:02,brush,bar-2
+p14,0:01:03,brush,bar-2
+p14,0:01:04,brush,bar-2
+p14,0:01:05,brush,bar-2
+p14,0:01:06,brush,bar-2
+p14,0:01:08,brush,bar-2
+p14,0:01:10,brush,bar-4
+p14,0:01:11,brush,bar-2
+p14,0:01:12,brush,bar-2
+p14,0:01:13,brush,bar-2
+p14,0:01:14,brush,bar-2
+p14,0:01:15,brush,bar-2
+p14,0:01:16,brush,bar-2
+p14,0:01:17,brush,bar-2
+p14,0:01:18,brush,bar-2
+p14,0:01:19,brush,bar-2
+p14,0:01:20,brush,bar-2
+p14,0:01:21,brush,bar-2
+p14,0:01:22,brush,bar-2
+p14,0:01:23,brush,bar-2
+p14,0:01:24,brush,bar-2
+p14,0:01:25,brush,bar-2
+p14,0:01:26,brush,bar-2
+p14,0:01:28,brush,bar-4
+p14,0:01:29,brush,bar-2
+p14,0:01:30,brush,bar-2
+p14,0:01:31,brush,bar-2
+p14,0:01:32,brush,bar-2
+p14,0:01:33,brush,bar-2
+p14,0:01:34,brush,bar-2
+p14,0:01:35,brush,bar-2
+p14,0:01:36,brush,bar-2
+p14,0:01:37,brush,bar-2
+p14,0:01:39,brush,bar-2
+p14,0:02:03,brush,bar-4
+p14,0:02:19,brush,bar-4
+p14,0:02:20,brush,bar-4
+p14,0:02:21,brush,bar-4
+p14,0:02:22,brush,bar-4
+p14,0:02:23,brush,bar-4
+p14,0:02:27,brush,bar-4
+p14,0:02:28,brush,bar-4
+p14,0:02:29,brush,bar-4
+p14,0:02:40,brush,bar-4
+p14,0:02:41,brush,bar-4
+p14,0:02:42,brush,bar-4
+p14,0:02:43,brush,bar-4
+p14,0:02:45,brush,bar-4
+p14,0:02:46,brush,bar-4
+p14,0:02:50,brush,bar-4
+p14,0:02:51,brush,bar-4
+p14,0:02:53,brush,bar-4
+p14,0:02:54,brush,bar-4
+p14,0:02:55,brush,bar-4
+p14,0:02:57,brush,bar-4
+p14,0:02:58,brush,bar-4
+p14,0:02:59,brush,bar-4
+p14,0:03:00,brush,bar-4
+p14,0:03:01,brush,bar-4
+p14,0:03:03,brush,bar-4
+p14,0:03:04,brush,bar-4
+p14,0:03:05,brush,bar-4
+p14,0:03:06,brush,bar-4
+p14,0:03:07,brush,bar-4
+p14,0:03:08,brush,bar-4
+p14,0:03:09,brush,bar-4
+p14,0:03:11,brush,bar-4
+p14,0:03:12,brush,bar-4
+p14,0:03:13,brush,bar-4
+p14,0:03:14,brush,bar-4
+p14,0:03:15,brush,bar-4
+p14,0:03:16,brush,bar-4
+p14,0:03:17,brush,bar-4
+p14,0:03:18,brush,bar-4
+p14,0:03:19,brush,bar-4
+p14,0:03:20,brush,bar-4
+p14,0:03:21,brush,bar-4
+p14,0:03:22,brush,bar-4
+p14,0:03:23,brush,bar-4
+p14,0:03:24,brush,bar-4
+p14,0:03:25,brush,bar-4
+p14,0:03:28,brush,bar-4
+p14,0:03:29,brush,bar-4
+p14,0:03:30,brush,bar-4
+p14,0:03:34,brush,bar-4
+p14,0:03:35,brush,bar-4
+p14,0:03:36,brush,bar-4
+p14,0:03:37,brush,bar-4
+p14,0:03:38,brush,bar-4
+p14,0:03:39,brush,bar-4
+p14,0:03:40,brush,bar-4
+p14,0:03:45,brush,bar-4
+p14,0:03:46,brush,bar-4
+p14,0:03:47,brush,bar-4
+p14,0:03:48,brush,bar-4
+p14,0:03:49,brush,bar-4
+p14,0:03:50,brush,bar-4
+p14,0:03:51,brush,bar-4
+p14,0:03:52,brush,bar-4
+p14,0:03:55,brush,bar-4
+p14,0:03:56,brush,bar-4
+p14,0:03:57,brush,bar-4
+p14,0:03:58,brush,bar-4
+p14,0:04:00,brush,bar-4
+p14,0:04:01,brush,bar-4
+p14,0:04:02,brush,bar-4
+p14,0:04:03,brush,bar-4
+p14,0:04:04,brush,bar-4
+p14,0:04:05,brush,bar-4
+p14,0:04:06,brush,bar-4
+p14,0:04:07,brush,bar-4
+p14,0:04:08,brush,bar-4
+p14,0:04:09,brush,bar-4
+p14,0:04:10,brush,bar-4
+p14,0:04:11,brush,bar-4
+p14,0:04:12,brush,bar-4
+p14,0:04:13,brush,bar-4
+p14,0:04:14,brush,bar-4
+p14,0:04:15,brush,bar-4
+p14,0:04:16,brush,bar-4
+p14,0:04:17,brush,bar-4
+p14,0:04:18,brush,bar-4
+p14,0:04:19,brush,bar-4
+p14,0:04:20,brush,bar-4
+p14,0:04:21,brush,bar-4
+p14,0:04:24,brush,bar-4
+p14,0:04:25,brush,bar-4
+p14,0:04:26,brush,bar-4
+p14,0:04:27,brush,bar-4
+p14,0:04:28,brush,bar-4
+p14,0:08:15,pan,scatterplot-0-1
+p14,0:08:16,pan,scatterplot-0-1
+p14,0:08:17,pan,scatterplot-0-1
+p14,0:08:23,pan,scatterplot-0-1
+p14,0:08:24,pan,scatterplot-0-1
+p14,0:08:25,pan,scatterplot-0-1
+p14,0:08:26,pan,scatterplot-0-1
+p14,0:08:28,range select,scatterplot-0-1
+p14,0:08:29,range select,scatterplot-0-1
+p14,0:08:30,range select,scatterplot-0-1
+p14,0:08:36,range select,bar-4
+p14,0:08:38,pan,scatterplot-0-1
+p14,0:08:42,range select,scatterplot-0-1
+p14,0:08:43,range select,scatterplot-0-1
+p14,0:08:44,range select,scatterplot-0-1
+p14,0:08:45,range select,scatterplot-0-1
+p14,0:08:46,range select,scatterplot-0-1
+p14,0:08:47,range select,scatterplot-0-1
+p14,0:08:48,range select,scatterplot-0-1
+p14,0:08:57,range select,scatterplot-0-1
+p14,0:08:58,range select,scatterplot-0-1
+p14,0:08:59,pan,scatterplot-0-1
+p14,0:09:00,pan,scatterplot-0-1
+p14,0:09:02,range select,scatterplot-0-1
+p14,0:09:03,range select,scatterplot-0-1
+p14,0:09:04,range select,scatterplot-0-1
+p14,0:09:05,range select,scatterplot-0-1
+p14,0:09:06,range select,scatterplot-0-1
+p14,0:09:07,range select,scatterplot-0-1
+p14,0:09:09,pan,scatterplot-0-1
+p14,0:09:10,pan,scatterplot-0-1
+p14,0:09:15,range select,scatterplot-0-1
+p14,0:09:16,range select,scatterplot-0-1
+p14,0:09:18,range select,scatterplot-0-1
+p14,0:09:19,range select,scatterplot-0-1
+p14,0:09:20,range select,scatterplot-0-1
+p14,0:09:23,range select,scatterplot-0-1
+p14,0:09:27,range select,scatterplot-0-1
+p14,0:09:28,range select,scatterplot-0-1
+p14,0:09:31,range select,scatterplot-0-1
+p14,0:09:32,range select,scatterplot-0-1
+p14,0:09:33,range select,scatterplot-0-1
+p14,0:09:37,pan,scatterplot-0-1
+p14,0:09:39,range select,scatterplot-0-1
+p14,0:09:46,range select,scatterplot-0-1
+p14,0:09:47,range select,scatterplot-0-1
+p14,0:09:48,range select,scatterplot-0-1
+p14,0:09:49,pan,scatterplot-0-1
+p14,0:09:50,range select,scatterplot-0-1
+p14,0:10:02,pan,scatterplot-0-1
+p14,0:10:04,range select,scatterplot-0-1
+p14,0:10:05,range select,scatterplot-0-1
+p14,0:10:06,range select,scatterplot-0-1
+p14,0:10:07,range select,scatterplot-0-1
+p14,0:10:08,range select,scatterplot-0-1
+p14,0:10:09,range select,scatterplot-0-1
+p14,0:10:10,range select,scatterplot-0-1
+p14,0:10:11,range select,scatterplot-0-1
+p14,0:10:12,range select,scatterplot-0-1
+p14,0:10:13,range select,scatterplot-0-1
+p14,0:10:14,range select,scatterplot-0-1
+p14,0:10:15,range select,scatterplot-0-1
+p14,0:10:25,range select,scatterplot-0-1
+p14,0:10:26,range select,scatterplot-0-1
+p14,0:10:28,range select,scatterplot-0-1
+p14,0:10:29,range select,scatterplot-0-1
+p14,0:10:30,range select,scatterplot-0-1
+p14,0:10:31,brush,bar-4
+p14,0:10:32,brush,bar-2
+p14,0:10:33,brush,bar-2
+p14,0:10:34,brush,bar-2
+p14,0:10:36,brush,bar-2
+p14,0:10:40,brush,bar-2
+p14,0:10:41,brush,bar-4
+p14,0:10:57,range select,hist-3
+p14,0:11:00,range select,hist-3
+p14,0:11:02,range select,hist-3
+p14,0:11:03,range select,hist-3
+p14,0:11:04,range select,hist-3
+p14,0:11:05,range select,hist-3
+p14,0:11:06,range select,hist-3
+p14,0:11:07,range select,hist-3
+p14,0:11:09,range select,hist-3
+p14,0:11:11,range select,hist-3
+p14,0:11:16,range select,hist-3
+p14,0:11:17,range select,hist-3
+p14,0:11:18,range select,hist-3
+p14,0:11:19,range select,hist-3
+p14,0:11:20,range select,hist-3
+p14,0:11:21,range select,hist-3
+p14,0:11:22,range select,hist-3
+p14,0:11:23,range select,hist-3
+p14,0:11:24,range select,hist-3
+p14,0:11:25,range select,hist-3
+p14,0:11:47,range select,hist-3
+p14,0:11:48,range select,hist-3
+p14,0:12:02,brush,hist-3
+p14,0:12:04,range select,bar-2
+p14,0:12:11,range select,bar-2
+p14,0:12:14,range select,bar-2
+p14,0:12:20,range select,bar-2
+p14,0:12:22,range select,bar-2
+p14,0:12:23,range select,bar-2
+p14,0:12:24,range select,bar-2
+p14,0:12:25,range select,bar-2
+p14,0:12:26,range select,bar-2
+p14,0:12:27,range select,bar-2
+p14,0:12:31,range select,bar-2
+p14,0:12:33,range select,bar-2
+p14,0:12:34,range select,bar-2
+p14,0:13:48,pan,scatterplot-0-1
+p14,0:13:49,pan,scatterplot-0-1
+p14,0:13:50,pan,scatterplot-0-1
+p14,0:13:52,range select,scatterplot-0-1
+p14,0:13:53,range select,scatterplot-0-1
+p14,0:13:54,pan,scatterplot-0-1
+p14,0:13:56,range select,scatterplot-0-1
+p14,0:13:57,range select,scatterplot-0-1
+p14,0:13:58,range select,scatterplot-0-1
+p14,0:14:28,pan,scatterplot-0-1
+p14,0:14:29,pan,scatterplot-0-1
+p14,0:14:30,pan,scatterplot-0-1
+p14,0:14:32,range select,scatterplot-0-1
+p14,0:15:29,pan,scatterplot-0-1

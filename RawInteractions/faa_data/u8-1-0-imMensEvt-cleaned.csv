@@ -1,0 +1,477 @@
+user, time, action, visualization
+p15,0:00:00,brush,bar-2
+p15,0:01:07,brush,bar-2
+p15,0:01:08,brush,bar-2
+p15,0:01:12,zoom,scatterplot-0-1
+p15,0:01:14,pan,scatterplot-0-1
+p15,0:01:15,pan,scatterplot-0-1
+p15,0:01:21,brush,bar-4
+p15,0:01:27,zoom,scatterplot-0-1
+p15,0:01:28,zoom,scatterplot-0-1
+p15,0:02:15,zoom,scatterplot-0-1
+p15,0:02:21,pan,scatterplot-0-1
+p15,0:02:22,pan,scatterplot-0-1
+p15,0:02:23,pan,scatterplot-0-1
+p15,0:03:47,brush,bar-4
+p15,0:03:51,zoom,scatterplot-0-1
+p15,0:07:46,brush,bar-4
+p15,0:07:47,brush,bar-2
+p15,0:07:51,brush,bar-4
+p15,0:07:52,brush,bar-4
+p15,0:07:53,brush,bar-4
+p15,0:07:54,brush,bar-4
+p15,0:07:56,brush,bar-4
+p15,0:07:57,brush,bar-4
+p15,0:07:59,brush,bar-4
+p15,0:08:00,brush,bar-4
+p15,0:08:01,brush,bar-4
+p15,0:08:04,brush,bar-4
+p15,0:08:05,brush,bar-4
+p15,0:08:13,range select,bar-4
+p15,0:08:14,range select,bar-4
+p15,0:08:15,range select,bar-4
+p15,0:08:32,range select,bar-4
+p15,0:08:34,range select,bar-4
+p15,0:08:35,range select,bar-4
+p15,0:08:37,range select,bar-4
+p15,0:08:38,range select,bar-4
+p15,0:08:39,range select,bar-4
+p15,0:08:41,range select,bar-4
+p15,0:08:46,range select,bar-4
+p15,0:08:48,brush,bar-4
+p15,0:08:49,range select,bar-4
+p15,0:09:01,range select,bar-4
+p15,0:09:02,range select,bar-4
+p15,0:09:03,range select,bar-4
+p15,0:09:04,range select,bar-4
+p15,0:09:10,range select,bar-4
+p15,0:09:11,range select,bar-4
+p15,0:09:12,range select,bar-4
+p15,0:09:13,range select,bar-4
+p15,0:09:14,range select,bar-4
+p15,0:09:16,range select,bar-4
+p15,0:09:17,range select,bar-4
+p15,0:09:18,range select,bar-4
+p15,0:09:19,range select,bar-4
+p15,0:09:21,range select,bar-4
+p15,0:09:22,range select,bar-4
+p15,0:09:23,range select,bar-4
+p15,0:09:24,range select,bar-4
+p15,0:09:25,range select,bar-4
+p15,0:09:26,range select,bar-4
+p15,0:09:28,brush,bar-4
+p15,0:09:29,range select,bar-4
+p15,0:09:31,range select,bar-4
+p15,0:09:33,range select,bar-4
+p15,0:09:34,range select,bar-4
+p15,0:09:39,range select,bar-4
+p15,0:09:43,range select,bar-4
+p15,0:09:46,range select,bar-4
+p15,0:09:48,range select,bar-4
+p15,0:09:50,range select,bar-4
+p15,0:09:52,range select,bar-4
+p15,0:09:56,range select,bar-4
+p15,0:09:57,range select,bar-4
+p15,0:09:58,range select,bar-4
+p15,0:09:59,range select,bar-4
+p15,0:10:00,range select,bar-4
+p15,0:10:14,range select,bar-4
+p15,0:10:38,range select,bar-4
+p15,0:10:39,range select,bar-4
+p15,0:10:53,range select,bar-4
+p15,0:10:58,range select,bar-4
+p15,0:11:00,range select,bar-4
+p15,0:11:08,range select,bar-4
+p15,0:11:09,range select,bar-4
+p15,0:11:10,range select,bar-4
+p15,0:11:11,range select,bar-4
+p15,0:11:12,range select,bar-4
+p15,0:11:13,range select,bar-4
+p15,0:11:14,range select,bar-4
+p15,0:11:15,range select,bar-4
+p15,0:11:16,range select,bar-4
+p15,0:11:17,range select,bar-4
+p15,0:11:29,range select,bar-4
+p15,0:11:32,range select,bar-4
+p15,0:11:33,range select,bar-4
+p15,0:11:34,range select,bar-4
+p15,0:11:36,range select,bar-4
+p15,0:11:38,range select,bar-4
+p15,0:11:39,range select,bar-4
+p15,0:11:41,range select,bar-4
+p15,0:11:43,range select,bar-4
+p15,0:11:49,range select,bar-4
+p15,0:11:50,range select,bar-4
+p15,0:11:51,range select,bar-4
+p15,0:11:54,range select,bar-4
+p15,0:11:56,range select,bar-2
+p15,0:11:57,range select,bar-2
+p15,0:11:59,range select,bar-2
+p15,0:12:00,range select,bar-2
+p15,0:12:02,range select,bar-2
+p15,0:12:03,range select,bar-2
+p15,0:12:04,range select,bar-2
+p15,0:12:05,range select,bar-2
+p15,0:12:07,range select,bar-2
+p15,0:12:08,range select,bar-2
+p15,0:12:10,range select,bar-2
+p15,0:12:14,range select,bar-2
+p15,0:12:15,range select,bar-2
+p15,0:12:16,range select,bar-2
+p15,0:12:17,range select,bar-2
+p15,0:12:18,range select,bar-2
+p15,0:12:19,range select,bar-2
+p15,0:12:20,range select,bar-2
+p15,0:12:23,range select,bar-2
+p15,0:12:24,range select,bar-2
+p15,0:12:25,range select,bar-2
+p15,0:12:26,range select,bar-2
+p15,0:12:28,range select,bar-2
+p15,0:12:29,range select,bar-2
+p15,0:12:30,range select,bar-2
+p15,0:12:31,range select,bar-2
+p15,0:12:32,range select,bar-2
+p15,0:12:34,range select,bar-2
+p15,0:12:35,range select,bar-2
+p15,0:12:36,range select,bar-2
+p15,0:12:37,range select,bar-2
+p15,0:12:38,range select,bar-2
+p15,0:12:39,range select,bar-2
+p15,0:12:40,range select,bar-2
+p15,0:12:42,range select,bar-2
+p15,0:12:46,range select,bar-2
+p15,0:12:47,range select,bar-2
+p15,0:12:48,range select,bar-2
+p15,0:13:01,range select,bar-2
+p15,0:13:04,range select,bar-2
+p15,0:13:06,range select,bar-2
+p15,0:13:07,range select,bar-2
+p15,0:13:10,range select,bar-2
+p15,0:13:11,range select,bar-2
+p15,0:13:12,range select,bar-2
+p15,0:13:13,range select,bar-2
+p15,0:13:14,range select,bar-2
+p15,0:13:15,range select,bar-2
+p15,0:13:16,range select,bar-2
+p15,0:13:18,range select,bar-2
+p15,0:13:19,range select,bar-2
+p15,0:13:30,range select,bar-2
+p15,0:13:32,range select,bar-2
+p15,0:13:33,range select,bar-2
+p15,0:13:34,range select,bar-2
+p15,0:13:38,range select,bar-2
+p15,0:13:40,range select,bar-2
+p15,0:13:42,range select,bar-2
+p15,0:13:43,range select,bar-2
+p15,0:13:45,range select,bar-2
+p15,0:13:46,range select,bar-2
+p15,0:13:48,range select,bar-2
+p15,0:13:49,range select,bar-2
+p15,0:13:50,range select,bar-2
+p15,0:13:52,range select,bar-2
+p15,0:13:53,range select,bar-2
+p15,0:13:55,range select,bar-2
+p15,0:13:56,range select,bar-2
+p15,0:13:57,range select,bar-2
+p15,0:13:58,range select,bar-2
+p15,0:13:59,range select,bar-2
+p15,0:14:00,range select,bar-2
+p15,0:14:02,range select,bar-2
+p15,0:14:03,range select,bar-2
+p15,0:14:32,range select,bar-2
+p15,0:14:34,range select,bar-2
+p15,0:14:35,range select,bar-2
+p15,0:14:36,range select,bar-2
+p15,0:14:37,range select,bar-2
+p15,0:14:39,range select,bar-2
+p15,0:14:42,range select,bar-2
+p15,0:14:45,range select,bar-4
+p15,0:14:48,range select,bar-4
+p15,0:14:52,range select,bar-4
+p15,0:14:53,range select,bar-4
+p15,0:15:12,range select,bar-4
+p15,0:15:17,range select,bar-4
+p15,0:15:25,range select,bar-4
+p15,0:15:36,range select,bar-4
+p15,0:15:38,range select,bar-4
+p15,0:15:45,range select,bar-4
+p15,0:15:47,range select,bar-4
+p15,0:15:48,range select,bar-4
+p15,0:15:54,range select,bar-4
+p15,0:16:01,range select,bar-4
+p15,0:16:07,range select,bar-4
+p15,0:16:14,range select,bar-4
+p15,0:16:16,range select,bar-4
+p15,0:16:19,range select,bar-4
+p15,0:16:23,range select,bar-4
+p15,0:16:25,range select,bar-4
+p15,0:16:29,range select,bar-4
+p15,0:16:39,range select,bar-4
+p15,0:16:45,range select,bar-4
+p15,0:16:52,range select,bar-4
+p15,0:16:55,range select,bar-4
+p15,0:17:03,range select,bar-4
+p15,0:17:08,range select,bar-4
+p15,0:17:13,range select,bar-4
+p15,0:17:24,range select,bar-4
+p15,0:17:39,range select,bar-4
+p15,0:17:43,range select,bar-4
+p15,0:17:58,range select,bar-4
+p15,0:18:02,range select,bar-4
+p15,0:18:10,range select,bar-4
+p15,0:18:11,range select,bar-4
+p15,0:18:14,range select,bar-4
+p15,0:18:15,range select,bar-4
+p15,0:18:16,range select,bar-4
+p15,0:18:17,range select,bar-4
+p15,0:18:18,range select,bar-4
+p15,0:18:19,range select,bar-4
+p15,0:18:20,range select,bar-4
+p15,0:18:22,range select,bar-4
+p15,0:18:23,range select,bar-4
+p15,0:18:24,range select,bar-4
+p15,0:18:25,range select,bar-4
+p15,0:18:26,range select,bar-4
+p15,0:18:28,range select,bar-4
+p15,0:18:29,range select,bar-4
+p15,0:18:30,range select,bar-4
+p15,0:18:37,range select,bar-4
+p15,0:18:38,range select,bar-4
+p15,0:18:39,range select,bar-4
+p15,0:18:40,range select,bar-4
+p15,0:18:41,range select,bar-4
+p15,0:18:48,range select,bar-4
+p15,0:18:49,range select,bar-4
+p15,0:18:51,range select,bar-4
+p15,0:18:52,range select,bar-4
+p15,0:18:53,range select,bar-4
+p15,0:18:55,range select,bar-4
+p15,0:18:58,range select,bar-4
+p15,0:18:59,range select,bar-4
+p15,0:19:00,range select,bar-4
+p15,0:19:01,range select,bar-4
+p15,0:19:02,range select,bar-4
+p15,0:19:04,range select,bar-4
+p15,0:19:05,range select,bar-4
+p15,0:19:09,range select,bar-4
+p15,0:19:11,range select,bar-4
+p15,0:19:12,range select,bar-4
+p15,0:19:14,range select,bar-4
+p15,0:19:17,range select,bar-4
+p15,0:19:18,range select,bar-4
+p15,0:19:19,range select,bar-4
+p15,0:19:20,range select,bar-4
+p15,0:19:24,range select,bar-4
+p15,0:19:27,range select,bar-4
+p15,0:19:30,range select,bar-4
+p15,0:19:31,range select,bar-4
+p15,0:19:38,range select,bar-4
+p15,0:19:43,range select,bar-4
+p15,0:19:44,range select,bar-4
+p15,0:19:45,range select,bar-4
+p15,0:19:46,range select,bar-4
+p15,0:19:47,range select,bar-4
+p15,0:20:06,range select,bar-4
+p15,0:20:11,range select,bar-4
+p15,0:20:12,range select,bar-4
+p15,0:20:15,range select,bar-4
+p15,0:20:16,range select,bar-4
+p15,0:20:17,range select,bar-4
+p15,0:20:18,range select,bar-4
+p15,0:20:31,range select,bar-4
+p15,0:20:36,range select,bar-4
+p15,0:20:37,range select,bar-4
+p15,0:20:41,range select,bar-4
+p15,0:20:43,range select,bar-4
+p15,0:20:44,range select,bar-4
+p15,0:20:45,range select,bar-4
+p15,0:20:47,range select,bar-4
+p15,0:20:57,range select,bar-4
+p15,0:21:32,range select,hist-3
+p15,0:21:36,range select,hist-3
+p15,0:21:38,range select,hist-3
+p15,0:21:40,range select,hist-3
+p15,0:21:42,range select,hist-3
+p15,0:21:45,range select,hist-3
+p15,0:21:47,range select,hist-3
+p15,0:21:50,range select,hist-3
+p15,0:21:52,range select,hist-3
+p15,0:21:53,range select,hist-3
+p15,0:21:54,range select,hist-3
+p15,0:21:55,range select,hist-3
+p15,0:21:58,brush,bar-2
+p15,0:22:00,brush,bar-2
+p15,0:22:02,range select,bar-2
+p15,0:22:03,range select,bar-2
+p15,0:22:05,range select,bar-2
+p15,0:22:06,range select,bar-2
+p15,0:22:08,range select,bar-2
+p15,0:22:14,range select,hist-3
+p15,0:22:17,range select,hist-3
+p15,0:22:18,range select,hist-3
+p15,0:22:24,brush,hist-3
+p15,0:22:25,range select,hist-3
+p15,0:22:27,range select,bar-2
+p15,0:22:28,range select,bar-2
+p15,0:22:29,range select,bar-2
+p15,0:22:30,range select,bar-2
+p15,0:22:31,range select,bar-2
+p15,0:22:32,range select,bar-2
+p15,0:22:34,range select,bar-2
+p15,0:22:35,range select,bar-2
+p15,0:23:00,range select,bar-4
+p15,0:23:01,range select,bar-4
+p15,0:23:09,brush,bar-2
+p15,0:23:10,range select,bar-2
+p15,0:23:11,range select,bar-2
+p15,0:23:16,range select,bar-2
+p15,0:23:17,range select,bar-2
+p15,0:23:18,range select,bar-2
+p15,0:23:19,range select,bar-2
+p15,0:23:20,range select,bar-2
+p15,0:23:22,range select,bar-2
+p15,0:23:23,range select,bar-2
+p15,0:23:24,range select,bar-2
+p15,0:23:25,range select,bar-2
+p15,0:23:27,range select,bar-2
+p15,0:23:29,range select,bar-2
+p15,0:23:41,range select,bar-4
+p15,0:23:51,range select,bar-2
+p15,0:23:54,range select,bar-2
+p15,0:23:55,range select,bar-2
+p15,0:23:57,range select,bar-2
+p15,0:24:00,range select,bar-2
+p15,0:24:02,range select,bar-2
+p15,0:24:03,range select,bar-2
+p15,0:24:55,range select,bar-4
+p15,0:24:56,range select,bar-4
+p15,0:24:59,range select,bar-4
+p15,0:25:01,range select,bar-4
+p15,0:25:02,range select,bar-4
+p15,0:25:09,range select,bar-4
+p15,0:25:10,range select,bar-4
+p15,0:25:11,range select,bar-4
+p15,0:25:12,range select,bar-4
+p15,0:25:13,range select,bar-4
+p15,0:25:21,range select,bar-4
+p15,0:25:23,range select,bar-4
+p15,0:25:24,range select,bar-4
+p15,0:25:26,range select,bar-4
+p15,0:25:27,range select,bar-4
+p15,0:25:28,range select,bar-4
+p15,0:25:33,range select,bar-4
+p15,0:25:34,range select,bar-4
+p15,0:25:37,range select,bar-4
+p15,0:25:38,range select,bar-4
+p15,0:25:39,range select,bar-4
+p15,0:25:41,range select,bar-4
+p15,0:25:42,range select,bar-4
+p15,0:25:43,range select,bar-4
+p15,0:25:44,range select,bar-4
+p15,0:25:45,range select,bar-4
+p15,0:25:47,range select,bar-4
+p15,0:25:48,range select,bar-4
+p15,0:25:49,range select,bar-4
+p15,0:25:50,range select,bar-4
+p15,0:25:51,range select,bar-4
+p15,0:25:53,range select,bar-4
+p15,0:25:54,range select,bar-4
+p15,0:25:59,range select,bar-4
+p15,0:26:00,range select,bar-4
+p15,0:26:02,range select,bar-4
+p15,0:26:03,range select,bar-4
+p15,0:26:05,range select,bar-4
+p15,0:26:06,range select,bar-4
+p15,0:26:10,brush,bar-2
+p15,0:26:11,brush,bar-2
+p15,0:26:13,brush,bar-2
+p15,0:26:15,brush,bar-2
+p15,0:26:16,brush,bar-2
+p15,0:26:17,brush,bar-2
+p15,0:26:18,brush,bar-2
+p15,0:26:19,brush,bar-2
+p15,0:26:20,brush,bar-2
+p15,0:26:21,brush,bar-2
+p15,0:26:22,brush,bar-2
+p15,0:26:23,brush,bar-2
+p15,0:26:24,brush,bar-2
+p15,0:26:25,brush,bar-2
+p15,0:26:29,range select,bar-2
+p15,0:26:32,range select,bar-2
+p15,0:26:34,range select,bar-2
+p15,0:26:36,range select,bar-2
+p15,0:26:49,zoom,scatterplot-0-1
+p15,0:26:50,pan,scatterplot-0-1
+p15,0:26:51,pan,scatterplot-0-1
+p15,0:26:54,pan,scatterplot-0-1
+p15,0:26:55,pan,scatterplot-0-1
+p15,0:26:56,pan,scatterplot-0-1
+p15,0:26:57,pan,scatterplot-0-1
+p15,0:26:58,range select,scatterplot-0-1
+p15,0:26:59,range select,scatterplot-0-1
+p15,0:27:00,range select,scatterplot-0-1
+p15,0:27:01,range select,scatterplot-0-1
+p15,0:27:02,range select,scatterplot-0-1
+p15,0:27:03,range select,scatterplot-0-1
+p15,0:27:06,pan,scatterplot-0-1
+p15,0:27:07,pan,scatterplot-0-1
+p15,0:27:08,pan,scatterplot-0-1
+p15,0:27:09,pan,scatterplot-0-1
+p15,0:27:11,pan,scatterplot-0-1
+p15,0:27:12,pan,scatterplot-0-1
+p15,0:27:13,pan,scatterplot-0-1
+p15,0:27:14,pan,scatterplot-0-1
+p15,0:27:15,pan,scatterplot-0-1
+p15,0:27:16,pan,scatterplot-0-1
+p15,0:27:17,pan,scatterplot-0-1
+p15,0:27:18,range select,scatterplot-0-1
+p15,0:27:19,range select,scatterplot-0-1
+p15,0:27:20,range select,scatterplot-0-1
+p15,0:27:21,range select,scatterplot-0-1
+p15,0:27:22,pan,scatterplot-0-1
+p15,0:27:24,range select,scatterplot-0-1
+p15,0:27:25,range select,scatterplot-0-1
+p15,0:28:34,zoom,scatterplot-0-1
+p15,0:28:35,zoom,scatterplot-0-1
+p15,0:28:36,pan,scatterplot-0-1
+p15,0:28:37,pan,scatterplot-0-1
+p15,0:28:38,pan,scatterplot-0-1
+p15,0:28:39,pan,scatterplot-0-1
+p15,0:28:41,range select,scatterplot-0-1
+p15,0:28:42,range select,scatterplot-0-1
+p15,0:28:44,range select,scatterplot-0-1
+p15,0:28:45,range select,scatterplot-0-1
+p15,0:29:28,pan,scatterplot-0-1
+p15,0:29:32,pan,scatterplot-0-1
+p15,0:29:33,pan,scatterplot-0-1
+p15,0:29:36,pan,scatterplot-0-1
+p15,0:29:37,pan,scatterplot-0-1
+p15,0:29:42,pan,scatterplot-0-1
+p15,0:29:43,pan,scatterplot-0-1
+p15,0:29:44,range select,scatterplot-0-1
+p15,0:29:45,range select,scatterplot-0-1
+p15,0:29:48,pan,scatterplot-0-1
+p15,0:29:49,pan,scatterplot-0-1
+p15,0:29:52,range select,scatterplot-0-1
+p15,0:29:53,range select,scatterplot-0-1
+p15,0:29:54,range select,scatterplot-0-1
+p15,0:30:06,range select,scatterplot-0-1
+p15,0:30:07,range select,scatterplot-0-1
+p15,0:30:08,range select,scatterplot-0-1
+p15,0:30:09,range select,scatterplot-0-1
+p15,0:30:13,range select,scatterplot-0-1
+p15,0:30:14,range select,scatterplot-0-1
+p15,0:30:15,range select,scatterplot-0-1
+p15,0:31:29,pan,scatterplot-0-1
+p15,0:31:31,pan,scatterplot-0-1
+p15,0:31:34,range select,scatterplot-0-1
+p15,0:31:35,range select,scatterplot-0-1
+p15,0:31:36,range select,scatterplot-0-1
+p15,0:31:37,range select,scatterplot-0-1
+p15,0:31:38,range select,scatterplot-0-1
+p15,0:31:39,range select,scatterplot-0-1
+p15,0:31:42,range select,scatterplot-0-1
+p15,0:32:40,pan,scatterplot-0-1
+p15,0:32:44,range select,scatterplot-0-1
+p15,0:32:45,range select,scatterplot-0-1
+p15,0:32:46,range select,scatterplot-0-1

@@ -39,35 +39,50 @@ class environment5:
 
 
     def get_state(self, task, visualization, high_level_state, algo):
-        if algo == 'Qlearn':
-            state = visualization + '+' + high_level_state
+        if algo == 'Qlearn' or algo == 'SARSA':
+            # state = visualization + '+' + high_level_state
+            state = visualization
         else: 
-            state = np.zeros(9, dtype = np.int)
             if task == 'faa':
                 vizs = ['bar-4', 'bar-2', 'hist-3', 'scatterplot-0-1']
             else:
                 vizs = ['bar-5', 'hist-2', 'hist-3', 'hist-4', 'geo-0-1']
+            state = np.zeros(len(vizs), dtype = np.int)
             for idx, v in enumerate(vizs):
                 if v == visualization:
                     state[idx] = 1
                     break
-            high_level_states = ['observation', 'generalization', 'question', 'hypothesis']
-            idx = 0
-            for idx, s in enumerate(high_level_states):
-                if s == high_level_state:
-                    state[5+idx] = 1
-                    break
+
+            # state = np.zeros(9, dtype = np.int)
+            # if task == 'faa':
+            #     vizs = ['bar-4', 'bar-2', 'hist-3', 'scatterplot-0-1']
+            # else:
+            #     vizs = ['bar-5', 'hist-2', 'hist-3', 'hist-4', 'geo-0-1']
+            # for idx, v in enumerate(vizs):
+            #     if v == visualization:
+            #         state[idx] = 1
+            #         break
+            # high_level_states = ['observation', 'generalization', 'question', 'hypothesis']
+            # idx = 0
+            # for idx, s in enumerate(high_level_states):
+            #     if s == high_level_state:
+            #         state[5+idx] = 1
+            #         break
             return state
 
     def process_data(self, task, raw_file, feedback_file, thres, algo):
         # pdb.set_trace()
         obj = read_data()
-        data = obj.merge(raw_file, feedback_file)
+        data = obj.merge2(raw_file, feedback_file)
         # for index, row in df.iterrows():
         for d in data:
             state = self.get_state(task, d[2], d[3], algo)
             self.mem_states.append(state)
-            self.mem_reward.append(d[4])
+            if d[4] == 1:
+                self.mem_reward.append(d[4])
+            else:
+                self.mem_reward.append(0.2)
+
             # print(d[1])
             self.mem_action.append(self.action_space[d[1]])
 

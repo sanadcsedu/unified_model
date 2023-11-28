@@ -1,0 +1,401 @@
+user, time, action, visualization
+p13,0:00:00,brush,hist-3
+p13,0:00:01,brush,hist-4
+p13,0:00:07,brush,hist-4
+p13,0:00:08,brush,hist-4
+p13,0:00:11,pan,geo-0-1
+p13,0:00:12,pan,geo-0-1
+p13,0:00:16,pan,geo-0-1
+p13,0:00:18,pan,geo-0-1
+p13,0:00:19,pan,geo-0-1
+p13,0:00:20,pan,geo-0-1
+p13,0:00:21,pan,geo-0-1
+p13,0:00:26,brush,hist-4
+p13,0:00:29,pan,geo-0-1
+p13,0:00:30,pan,geo-0-1
+p13,0:00:37,pan,geo-0-1
+p13,0:00:38,zoom,geo-0-1
+p13,0:00:39,pan,geo-0-1
+p13,0:00:40,pan,geo-0-1
+p13,0:00:41,pan,geo-0-1
+p13,0:00:42,pan,geo-0-1
+p13,0:00:43,pan,geo-0-1
+p13,0:00:44,pan,geo-0-1
+p13,0:00:55,pan,geo-0-1
+p13,0:00:58,pan,geo-0-1
+p13,0:01:00,pan,geo-0-1
+p13,0:01:01,pan,geo-0-1
+p13,0:01:02,pan,geo-0-1
+p13,0:01:05,pan,geo-0-1
+p13,0:01:06,pan,geo-0-1
+p13,0:01:10,pan,geo-0-1
+p13,0:01:11,pan,geo-0-1
+p13,0:01:13,pan,geo-0-1
+p13,0:01:14,pan,geo-0-1
+p13,0:01:15,pan,geo-0-1
+p13,0:01:17,pan,geo-0-1
+p13,0:01:18,zoom,geo-0-1
+p13,0:01:27,pan,geo-0-1
+p13,0:01:28,pan,geo-0-1
+p13,0:01:29,pan,geo-0-1
+p13,0:01:31,pan,geo-0-1
+p13,0:01:32,pan,geo-0-1
+p13,0:01:34,pan,geo-0-1
+p13,0:01:36,pan,geo-0-1
+p13,0:01:37,pan,geo-0-1
+p13,0:01:38,pan,geo-0-1
+p13,0:01:39,pan,geo-0-1
+p13,0:01:40,pan,geo-0-1
+p13,0:01:45,pan,geo-0-1
+p13,0:01:49,pan,geo-0-1
+p13,0:01:50,zoom,geo-0-1
+p13,0:01:51,pan,geo-0-1
+p13,0:01:58,pan,geo-0-1
+p13,0:02:00,pan,geo-0-1
+p13,0:02:01,pan,geo-0-1
+p13,0:02:05,pan,geo-0-1
+p13,0:02:06,pan,geo-0-1
+p13,0:02:07,pan,geo-0-1
+p13,0:02:11,pan,geo-0-1
+p13,0:02:12,pan,geo-0-1
+p13,0:02:13,pan,geo-0-1
+p13,0:02:15,pan,geo-0-1
+p13,0:02:16,pan,geo-0-1
+p13,0:02:17,zoom,geo-0-1
+p13,0:02:18,pan,geo-0-1
+p13,0:02:19,pan,geo-0-1
+p13,0:02:33,range select,geo-0-1
+p13,0:02:34,range select,geo-0-1
+p13,0:03:58,range select,bar-5
+p13,0:04:01,pan,geo-0-1
+p13,0:04:02,pan,geo-0-1
+p13,0:04:03,pan,geo-0-1
+p13,0:04:04,pan,geo-0-1
+p13,0:04:05,pan,geo-0-1
+p13,0:04:06,pan,geo-0-1
+p13,0:04:07,pan,geo-0-1
+p13,0:04:12,pan,geo-0-1
+p13,0:04:13,pan,geo-0-1
+p13,0:04:14,pan,geo-0-1
+p13,0:04:15,pan,geo-0-1
+p13,0:04:16,pan,geo-0-1
+p13,0:04:40,pan,geo-0-1
+p13,0:04:42,pan,geo-0-1
+p13,0:04:43,pan,geo-0-1
+p13,0:04:44,pan,geo-0-1
+p13,0:04:50,pan,geo-0-1
+p13,0:04:51,pan,geo-0-1
+p13,0:07:03,range select,bar-5
+p13,0:07:05,range select,bar-5
+p13,0:07:15,pan,geo-0-1
+p13,0:07:18,brush,hist-4
+p13,0:07:19,brush,hist-4
+p13,0:07:20,pan,geo-0-1
+p13,0:07:22,pan,geo-0-1
+p13,0:07:23,pan,geo-0-1
+p13,0:07:24,pan,geo-0-1
+p13,0:07:26,brush,bar-5
+p13,0:07:27,brush,bar-5
+p13,0:07:29,brush,bar-5
+p13,0:07:30,brush,bar-5
+p13,0:07:31,brush,bar-5
+p13,0:07:33,brush,bar-5
+p13,0:07:34,brush,bar-5
+p13,0:07:35,brush,bar-5
+p13,0:07:36,brush,bar-5
+p13,0:07:37,brush,bar-5
+p13,0:07:38,brush,bar-5
+p13,0:07:41,range select,bar-5
+p13,0:08:04,range select,bar-5
+p13,0:08:05,range select,bar-5
+p13,0:08:06,range select,bar-5
+p13,0:08:07,range select,bar-5
+p13,0:08:16,range select,bar-5
+p13,0:08:27,range select,bar-5
+p13,0:08:34,range select,bar-5
+p13,0:08:35,range select,bar-5
+p13,0:08:36,range select,bar-5
+p13,0:08:37,range select,bar-5
+p13,0:08:39,range select,bar-5
+p13,0:08:41,range select,bar-5
+p13,0:08:42,range select,bar-5
+p13,0:08:44,range select,bar-5
+p13,0:08:45,range select,bar-5
+p13,0:08:46,range select,bar-5
+p13,0:08:47,range select,bar-5
+p13,0:08:48,range select,bar-5
+p13,0:08:49,range select,bar-5
+p13,0:08:58,range select,bar-5
+p13,0:08:59,range select,bar-5
+p13,0:09:00,range select,bar-5
+p13,0:09:03,range select,bar-5
+p13,0:09:04,range select,bar-5
+p13,0:09:05,range select,bar-5
+p13,0:09:06,range select,bar-5
+p13,0:09:07,range select,bar-5
+p13,0:09:08,range select,bar-5
+p13,0:09:09,range select,bar-5
+p13,0:09:10,range select,bar-5
+p13,0:09:11,range select,bar-5
+p13,0:09:15,range select,bar-5
+p13,0:09:18,range select,bar-5
+p13,0:09:20,range select,bar-5
+p13,0:09:21,range select,bar-5
+p13,0:09:22,range select,bar-5
+p13,0:09:29,range select,bar-5
+p13,0:09:30,brush,bar-5
+p13,0:09:31,brush,bar-5
+p13,0:09:32,brush,bar-5
+p13,0:09:33,brush,bar-5
+p13,0:09:34,brush,bar-5
+p13,0:09:35,brush,bar-5
+p13,0:09:36,brush,bar-5
+p13,0:09:37,brush,bar-5
+p13,0:09:41,brush,bar-5
+p13,0:09:42,brush,bar-5
+p13,0:09:45,range select,bar-5
+p13,0:09:47,pan,geo-0-1
+p13,0:09:48,pan,geo-0-1
+p13,0:09:50,pan,geo-0-1
+p13,0:10:03,pan,geo-0-1
+p13,0:10:04,pan,geo-0-1
+p13,0:10:14,pan,geo-0-1
+p13,0:10:15,pan,geo-0-1
+p13,0:10:17,pan,geo-0-1
+p13,0:10:19,pan,geo-0-1
+p13,0:10:20,pan,geo-0-1
+p13,0:10:22,pan,geo-0-1
+p13,0:10:25,pan,geo-0-1
+p13,0:10:28,pan,geo-0-1
+p13,0:10:31,pan,geo-0-1
+p13,0:10:36,range select,geo-0-1
+p13,0:11:17,range select,hist-2
+p13,0:11:22,range select,bar-5
+p13,0:11:33,pan,geo-0-1
+p13,0:11:34,pan,geo-0-1
+p13,0:11:35,pan,geo-0-1
+p13,0:11:36,pan,geo-0-1
+p13,0:11:37,pan,geo-0-1
+p13,0:11:38,pan,geo-0-1
+p13,0:11:40,pan,geo-0-1
+p13,0:11:41,pan,geo-0-1
+p13,0:11:44,range select,geo-0-1
+p13,0:11:45,range select,geo-0-1
+p13,0:11:47,brush,bar-5
+p13,0:11:48,brush,bar-5
+p13,0:11:49,range select,bar-5
+p13,0:11:51,pan,geo-0-1
+p13,0:11:52,pan,geo-0-1
+p13,0:11:54,pan,geo-0-1
+p13,0:11:55,pan,geo-0-1
+p13,0:12:06,range select,geo-0-1
+p13,0:12:08,range select,bar-5
+p13,0:12:27,pan,geo-0-1
+p13,0:12:28,zoom,geo-0-1
+p13,0:12:29,pan,geo-0-1
+p13,0:12:30,zoom,geo-0-1
+p13,0:12:31,pan,geo-0-1
+p13,0:12:32,pan,geo-0-1
+p13,0:12:33,zoom,geo-0-1
+p13,0:12:34,pan,geo-0-1
+p13,0:12:35,zoom,geo-0-1
+p13,0:12:37,pan,geo-0-1
+p13,0:12:40,pan,geo-0-1
+p13,0:12:43,pan,geo-0-1
+p13,0:12:44,pan,geo-0-1
+p13,0:12:45,pan,geo-0-1
+p13,0:12:46,pan,geo-0-1
+p13,0:12:47,range select,geo-0-1
+p13,0:13:17,pan,geo-0-1
+p13,0:13:18,brush,hist-4
+p13,0:13:21,pan,geo-0-1
+p13,0:13:22,brush,hist-4
+p13,0:13:24,range select,geo-0-1
+p13,0:13:25,range select,geo-0-1
+p13,0:13:29,pan,geo-0-1
+p13,0:13:30,pan,geo-0-1
+p13,0:13:32,zoom,geo-0-1
+p13,0:13:36,range select,geo-0-1
+p13,0:13:37,range select,geo-0-1
+p13,0:13:38,range select,geo-0-1
+p13,0:13:41,range select,geo-0-1
+p13,0:13:42,range select,geo-0-1
+p13,0:13:43,range select,geo-0-1
+p13,0:13:44,range select,geo-0-1
+p13,0:13:45,range select,geo-0-1
+p13,0:13:47,range select,geo-0-1
+p13,0:13:48,range select,geo-0-1
+p13,0:13:49,range select,geo-0-1
+p13,0:13:50,range select,geo-0-1
+p13,0:13:51,range select,geo-0-1
+p13,0:13:52,range select,geo-0-1
+p13,0:14:02,pan,geo-0-1
+p13,0:14:04,pan,geo-0-1
+p13,0:14:05,pan,geo-0-1
+p13,0:14:22,range select,bar-5
+p13,0:14:23,range select,bar-5
+p13,0:14:24,range select,bar-5
+p13,0:14:25,range select,bar-5
+p13,0:14:26,range select,bar-5
+p13,0:14:54,pan,geo-0-1
+p13,0:14:55,pan,geo-0-1
+p13,0:14:56,pan,geo-0-1
+p13,0:14:57,pan,geo-0-1
+p13,0:14:58,pan,geo-0-1
+p13,0:15:53,brush,hist-4
+p13,0:15:55,pan,geo-0-1
+p13,0:15:56,pan,geo-0-1
+p13,0:15:57,pan,geo-0-1
+p13,0:15:58,pan,geo-0-1
+p13,0:15:59,brush,hist-3
+p13,0:16:00,brush,hist-3
+p13,0:16:01,range select,hist-3
+p13,0:16:13,brush,hist-4
+p13,0:16:14,brush,hist-4
+p13,0:16:15,brush,hist-4
+p13,0:16:16,brush,hist-4
+p13,0:16:17,brush,hist-4
+p13,0:16:18,brush,hist-4
+p13,0:16:19,brush,hist-4
+p13,0:16:20,brush,hist-4
+p13,0:16:21,brush,hist-4
+p13,0:16:22,brush,hist-4
+p13,0:16:23,brush,hist-4
+p13,0:16:24,brush,hist-4
+p13,0:16:25,brush,hist-4
+p13,0:16:26,brush,hist-4
+p13,0:16:27,brush,hist-4
+p13,0:16:28,brush,hist-4
+p13,0:16:29,brush,hist-4
+p13,0:16:30,brush,hist-4
+p13,0:16:31,brush,hist-4
+p13,0:16:32,brush,hist-4
+p13,0:16:33,brush,hist-4
+p13,0:16:37,range select,hist-4
+p13,0:16:39,range select,hist-4
+p13,0:16:40,range select,hist-4
+p13,0:16:48,range select,hist-4
+p13,0:16:50,range select,hist-4
+p13,0:16:51,range select,hist-4
+p13,0:16:52,range select,hist-4
+p13,0:17:09,brush,hist-4
+p13,0:17:10,brush,hist-4
+p13,0:17:11,brush,hist-4
+p13,0:17:12,brush,hist-4
+p13,0:17:13,brush,hist-4
+p13,0:17:14,brush,hist-4
+p13,0:17:15,brush,hist-4
+p13,0:17:16,brush,hist-4
+p13,0:17:17,brush,hist-4
+p13,0:17:18,brush,hist-4
+p13,0:17:19,brush,hist-4
+p13,0:17:20,brush,hist-4
+p13,0:17:21,brush,hist-4
+p13,0:17:22,brush,hist-4
+p13,0:17:23,brush,hist-3
+p13,0:17:24,brush,hist-3
+p13,0:17:25,brush,hist-3
+p13,0:17:26,brush,hist-3
+p13,0:17:27,brush,hist-3
+p13,0:17:28,brush,hist-3
+p13,0:17:29,brush,hist-3
+p13,0:17:30,brush,hist-2
+p13,0:17:31,brush,hist-2
+p13,0:17:32,brush,hist-2
+p13,0:17:33,brush,hist-2
+p13,0:17:34,brush,hist-2
+p13,0:17:35,brush,hist-2
+p13,0:17:36,brush,hist-2
+p13,0:17:37,brush,hist-2
+p13,0:17:38,brush,hist-2
+p13,0:17:39,brush,hist-2
+p13,0:17:40,brush,hist-2
+p13,0:17:42,brush,hist-2
+p13,0:17:43,range select,hist-2
+p13,0:17:44,range select,hist-2
+p13,0:17:45,range select,hist-2
+p13,0:18:31,range select,hist-2
+p13,0:18:32,range select,hist-2
+p13,0:18:40,range select,hist-2
+p13,0:18:41,range select,hist-2
+p13,0:18:43,range select,hist-2
+p13,0:18:46,range select,bar-5
+p13,0:18:47,range select,bar-5
+p13,0:18:48,range select,bar-5
+p13,0:18:59,range select,hist-2
+p13,0:19:23,brush,bar-5
+p13,0:19:24,brush,bar-5
+p13,0:19:26,range select,bar-5
+p13,0:19:40,range select,hist-4
+p13,0:19:49,brush,hist-4
+p13,0:20:14,range select,hist-3
+p13,0:20:17,range select,hist-3
+p13,0:20:19,range select,hist-3
+p13,0:20:59,range select,hist-3
+p13,0:21:00,range select,hist-3
+p13,0:21:02,range select,hist-3
+p13,0:21:34,range select,hist-4
+p13,0:21:35,range select,hist-4
+p13,0:21:41,pan,geo-0-1
+p13,0:21:42,pan,geo-0-1
+p13,0:21:43,pan,geo-0-1
+p13,0:21:44,pan,geo-0-1
+p13,0:21:46,pan,geo-0-1
+p13,0:21:47,pan,geo-0-1
+p13,0:21:49,pan,geo-0-1
+p13,0:21:50,pan,geo-0-1
+p13,0:21:51,pan,geo-0-1
+p13,0:21:52,pan,geo-0-1
+p13,0:21:53,pan,geo-0-1
+p13,0:21:55,pan,geo-0-1
+p13,0:21:56,pan,geo-0-1
+p13,0:21:57,pan,geo-0-1
+p13,0:21:59,pan,geo-0-1
+p13,0:22:04,pan,geo-0-1
+p13,0:22:05,pan,geo-0-1
+p13,0:22:08,pan,geo-0-1
+p13,0:22:10,pan,geo-0-1
+p13,0:22:11,pan,geo-0-1
+p13,0:22:14,pan,geo-0-1
+p13,0:22:17,range select,geo-0-1
+p13,0:22:18,range select,geo-0-1
+p13,0:22:38,pan,geo-0-1
+p13,0:22:39,pan,geo-0-1
+p13,0:22:41,range select,geo-0-1
+p13,0:22:42,range select,geo-0-1
+p13,0:22:51,range select,geo-0-1
+p13,0:22:52,range select,geo-0-1
+p13,0:22:56,pan,geo-0-1
+p13,0:23:01,pan,geo-0-1
+p13,0:23:02,pan,geo-0-1
+p13,0:23:03,pan,geo-0-1
+p13,0:23:04,pan,geo-0-1
+p13,0:23:05,pan,geo-0-1
+p13,0:23:06,pan,geo-0-1
+p13,0:23:27,pan,geo-0-1
+p13,0:23:29,pan,geo-0-1
+p13,0:23:30,pan,geo-0-1
+p13,0:23:33,pan,geo-0-1
+p13,0:23:35,pan,geo-0-1
+p13,0:23:37,pan,geo-0-1
+p13,0:23:38,pan,geo-0-1
+p13,0:23:39,range select,geo-0-1
+p13,0:23:43,pan,geo-0-1
+p13,0:23:45,brush,bar-5
+p13,0:23:47,pan,geo-0-1
+p13,0:23:48,zoom,geo-0-1
+p13,0:24:06,brush,hist-2
+p13,0:24:07,brush,hist-3
+p13,0:24:10,pan,geo-0-1
+p13,0:24:11,pan,geo-0-1
+p13,0:24:12,pan,geo-0-1
+p13,0:24:14,pan,geo-0-1
+p13,0:24:15,pan,geo-0-1
+p13,0:24:16,pan,geo-0-1
+p13,0:24:17,pan,geo-0-1
+p13,0:24:18,pan,geo-0-1
+p13,0:24:19,pan,geo-0-1
+p13,0:24:36,brush,hist-3
+p13,0:24:37,brush,hist-2
+p13,0:24:38,brush,hist-3
+p13,0:24:48,brush,hist-3

@@ -1,0 +1,690 @@
+time,action,visualization
+0:22:42,pan,geo-0-1
+0:22:43,pan,geo-0-1
+0:22:44,pan,geo-0-1
+0:22:45,pan,geo-0-1
+0:22:46,pan,geo-0-1
+0:22:47,pan,geo-0-1
+0:22:48,pan,geo-0-1
+0:22:49,pan,geo-0-1
+0:24:23,pan,geo-0-1
+0:24:24,pan,geo-0-1
+0:24:26,pan,geo-0-1
+0:24:27,zoom,geo-0-1
+0:24:29,pan,geo-0-1
+0:24:30,pan,geo-0-1
+0:24:36,pan,geo-0-1
+0:24:37,pan,geo-0-1
+0:24:38,pan,geo-0-1
+0:24:42,pan,geo-0-1
+0:24:43,pan,geo-0-1
+0:24:44,pan,geo-0-1
+0:24:45,pan,geo-0-1
+0:24:46,pan,geo-0-1
+0:24:47,pan,geo-0-1
+0:24:48,pan,geo-0-1
+0:24:49,pan,geo-0-1
+0:24:50,pan,geo-0-1
+0:24:51,pan,geo-0-1
+0:24:52,pan,geo-0-1
+0:24:53,pan,geo-0-1
+0:24:54,pan,geo-0-1
+0:24:55,pan,geo-0-1
+0:24:56,pan,geo-0-1
+0:25:00,pan,geo-0-1
+0:25:01,pan,geo-0-1
+0:25:02,pan,geo-0-1
+0:25:03,pan,geo-0-1
+0:25:04,pan,geo-0-1
+0:25:05,pan,geo-0-1
+0:25:07,pan,geo-0-1
+0:25:11,range select,geo-0-1
+0:25:49,range select,geo-0-1
+0:25:50,range select,geo-0-1
+0:25:59,pan,geo-0-1
+0:26:25,pan,geo-0-1
+0:26:26,pan,geo-0-1
+0:26:27,range select,geo-0-1
+0:26:28,range select,geo-0-1
+0:26:29,range select,geo-0-1
+0:26:30,range select,geo-0-1
+0:26:31,range select,geo-0-1
+0:26:32,range select,geo-0-1
+0:26:33,range select,geo-0-1
+0:26:34,range select,geo-0-1
+0:26:35,range select,geo-0-1
+0:26:36,range select,geo-0-1
+0:26:46,pan,geo-0-1
+0:26:48,range select,geo-0-1
+0:26:49,range select,geo-0-1
+0:27:02,pan,geo-0-1
+0:27:03,pan,geo-0-1
+0:27:04,range select,geo-0-1
+0:27:05,range select,geo-0-1
+0:27:12,pan,geo-0-1
+0:27:15,pan,geo-0-1
+0:27:25,range select,geo-0-1
+0:27:26,range select,geo-0-1
+0:27:38,pan,geo-0-1
+0:27:39,pan,geo-0-1
+0:27:40,pan,geo-0-1
+0:27:41,pan,geo-0-1
+0:27:42,range select,geo-0-1
+0:27:43,range select,geo-0-1
+0:28:20,brush,hist-4
+0:28:25,brush,hist-4
+0:28:26,brush,hist-4
+0:28:26,brush,hist-3
+0:28:26,brush,hist-2
+0:28:29,range select,geo-0-1
+0:28:32,range select,geo-0-1
+0:28:33,range select,geo-0-1
+0:28:34,range select,geo-0-1
+0:28:41,range select,geo-0-1
+0:28:44,range select,geo-0-1
+0:28:46,range select,geo-0-1
+0:28:48,range select,geo-0-1
+0:28:49,range select,geo-0-1
+0:28:50,range select,geo-0-1
+0:28:53,range select,geo-0-1
+0:29:00,pan,geo-0-1
+0:29:02,pan,geo-0-1
+0:29:03,pan,geo-0-1
+0:29:04,range select,geo-0-1
+0:29:05,range select,geo-0-1
+0:29:16,brush,hist-4
+0:29:17,range select,geo-0-1
+0:29:18,range select,geo-0-1
+0:29:19,range select,geo-0-1
+0:29:22,range select,geo-0-1
+0:29:23,range select,geo-0-1
+0:29:24,range select,geo-0-1
+0:29:25,range select,geo-0-1
+0:29:37,range select,geo-0-1
+0:29:38,range select,geo-0-1
+0:29:39,range select,geo-0-1
+0:29:45,range select,geo-0-1
+0:29:46,range select,geo-0-1
+0:29:48,brush,bar-5
+0:29:53,pan,geo-0-1
+0:29:55,pan,geo-0-1
+0:29:56,pan,geo-0-1
+0:29:59,pan,geo-0-1
+0:30:00,pan,geo-0-1
+0:30:01,pan,geo-0-1
+0:30:02,pan,geo-0-1
+0:30:03,pan,geo-0-1
+0:30:06,pan,geo-0-1
+0:30:08,range select,geo-0-1
+0:30:09,range select,geo-0-1
+0:30:18,range select,geo-0-1
+0:30:19,range select,geo-0-1
+0:30:20,range select,geo-0-1
+0:30:21,range select,geo-0-1
+0:30:22,range select,geo-0-1
+0:30:23,range select,geo-0-1
+0:30:24,range select,geo-0-1
+0:30:25,range select,geo-0-1
+0:30:27,range select,geo-0-1
+0:30:28,range select,geo-0-1
+0:30:38,range select,geo-0-1
+0:30:39,range select,geo-0-1
+0:30:43,pan,geo-0-1
+0:30:44,zoom,geo-0-1
+0:30:45,pan,geo-0-1
+0:30:46,pan,geo-0-1
+0:30:48,pan,geo-0-1
+0:30:51,range select,geo-0-1
+0:30:52,range select,geo-0-1
+0:30:55,range select,geo-0-1
+0:30:58,pan,geo-0-1
+0:30:59,pan,geo-0-1
+0:31:00,pan,geo-0-1
+0:31:01,pan,geo-0-1
+0:31:02,pan,geo-0-1
+0:31:03,pan,geo-0-1
+0:31:05,pan,geo-0-1
+0:31:06,pan,geo-0-1
+0:31:08,pan,geo-0-1
+0:31:11,range select,geo-0-1
+0:31:12,range select,geo-0-1
+0:31:14,range select,geo-0-1
+0:31:34,pan,geo-0-1
+0:31:35,pan,geo-0-1
+0:31:36,pan,geo-0-1
+0:31:37,pan,geo-0-1
+0:31:38,pan,geo-0-1
+0:31:40,pan,geo-0-1
+0:31:41,pan,geo-0-1
+0:31:42,pan,geo-0-1
+0:31:43,pan,geo-0-1
+0:31:44,pan,geo-0-1
+0:31:45,pan,geo-0-1
+0:31:46,pan,geo-0-1
+0:31:47,pan,geo-0-1
+0:31:48,pan,geo-0-1
+0:31:49,pan,geo-0-1
+0:31:50,pan,geo-0-1
+0:31:51,pan,geo-0-1
+0:31:56,range select,geo-0-1
+0:31:57,range select,geo-0-1
+0:31:58,range select,geo-0-1
+0:31:59,range select,geo-0-1
+0:32:15,brush,hist-4
+0:32:21,pan,geo-0-1
+0:32:22,pan,geo-0-1
+0:32:25,range select,geo-0-1
+0:32:27,range select,geo-0-1
+0:32:29,range select,geo-0-1
+0:32:32,range select,geo-0-1
+0:32:33,range select,geo-0-1
+0:32:34,range select,geo-0-1
+0:32:35,range select,geo-0-1
+0:32:36,range select,geo-0-1
+0:32:37,range select,geo-0-1
+0:32:38,range select,geo-0-1
+0:32:39,range select,geo-0-1
+0:32:40,range select,geo-0-1
+0:32:41,range select,geo-0-1
+0:32:49,pan,geo-0-1
+0:32:50,pan,geo-0-1
+0:32:51,pan,geo-0-1
+0:32:52,pan,geo-0-1
+0:32:53,zoom,geo-0-1
+0:32:55,range select,geo-0-1
+0:32:58,range select,geo-0-1
+0:33:04,range select,geo-0-1
+0:33:05,range select,geo-0-1
+0:33:10,range select,geo-0-1
+0:33:11,range select,geo-0-1
+0:33:12,range select,geo-0-1
+0:33:13,range select,geo-0-1
+0:33:14,range select,geo-0-1
+0:33:15,range select,geo-0-1
+0:33:17,range select,geo-0-1
+0:33:18,range select,geo-0-1
+0:33:22,pan,geo-0-1
+0:33:25,pan,geo-0-1
+0:33:26,pan,geo-0-1
+0:33:29,pan,geo-0-1
+0:33:30,pan,geo-0-1
+0:33:31,pan,geo-0-1
+0:33:35,range select,bar-5
+0:33:36,range select,bar-5
+0:33:37,range select,bar-5
+0:33:39,pan,geo-0-1
+0:33:40,pan,geo-0-1
+0:33:41,pan,geo-0-1
+0:33:42,pan,geo-0-1
+0:33:44,range select,bar-5
+0:33:47,pan,geo-0-1
+0:33:48,pan,geo-0-1
+0:33:49,pan,geo-0-1
+0:33:51,pan,geo-0-1
+0:33:52,pan,geo-0-1
+0:33:53,range select,geo-0-1
+0:33:54,range select,geo-0-1
+0:33:56,brush,bar-5
+0:33:57,brush,bar-5
+0:34:02,range select,bar-5
+0:34:04,range select,bar-5
+0:34:05,range select,bar-5
+0:34:06,range select,bar-5
+0:34:07,range select,bar-5
+0:34:08,range select,bar-5
+0:34:11,pan,geo-0-1
+0:34:13,range select,bar-5
+0:34:14,range select,bar-5
+0:34:15,range select,bar-5
+0:34:19,range select,hist-2
+0:34:24,brush,hist-2
+0:34:25,brush,hist-2
+0:34:26,brush,hist-2
+0:34:27,brush,hist-2
+0:34:28,brush,hist-2
+0:34:29,brush,hist-2
+0:34:30,brush,hist-2
+0:34:31,brush,hist-2
+0:34:32,brush,hist-2
+0:34:33,brush,hist-2
+0:34:34,brush,hist-2
+0:34:35,brush,hist-2
+0:34:37,brush,hist-2
+0:34:38,brush,hist-2
+0:34:39,brush,hist-2
+0:34:40,brush,hist-2
+0:34:41,brush,hist-2
+0:34:42,brush,hist-2
+0:34:43,brush,hist-2
+0:34:45,range select,hist-2
+0:34:46,pan,geo-0-1
+0:34:47,pan,geo-0-1
+0:34:48,pan,geo-0-1
+0:34:49,pan,geo-0-1
+0:34:50,zoom,geo-0-1
+0:34:51,pan,geo-0-1
+0:34:52,pan,geo-0-1
+0:35:00,pan,geo-0-1
+0:35:02,pan,geo-0-1
+0:35:03,pan,geo-0-1
+0:35:05,pan,geo-0-1
+0:35:06,pan,geo-0-1
+0:35:10,range select,geo-0-1
+0:35:11,range select,geo-0-1
+0:35:17,range select,geo-0-1
+0:35:18,range select,geo-0-1
+0:35:19,range select,geo-0-1
+0:35:27,range select,geo-0-1
+0:35:28,range select,geo-0-1
+0:35:29,range select,geo-0-1
+0:35:30,range select,geo-0-1
+0:35:33,pan,geo-0-1
+0:35:34,range select,geo-0-1
+0:35:35,range select,geo-0-1
+0:35:36,range select,geo-0-1
+0:35:37,range select,geo-0-1
+0:35:38,range select,geo-0-1
+0:35:47,range select,geo-0-1
+0:35:48,range select,geo-0-1
+0:35:49,range select,geo-0-1
+0:35:51,range select,geo-0-1
+0:35:52,range select,geo-0-1
+0:35:53,range select,geo-0-1
+0:35:54,range select,geo-0-1
+0:35:55,range select,geo-0-1
+0:35:56,range select,geo-0-1
+0:35:57,range select,geo-0-1
+0:36:11,pan,geo-0-1
+0:36:14,pan,geo-0-1
+0:36:15,range select,geo-0-1
+0:36:22,pan,geo-0-1
+0:36:25,pan,geo-0-1
+0:36:26,pan,geo-0-1
+0:36:27,range select,geo-0-1
+0:36:28,range select,geo-0-1
+0:36:29,range select,geo-0-1
+0:36:30,range select,geo-0-1
+0:36:31,range select,geo-0-1
+0:36:32,range select,geo-0-1
+0:36:33,range select,geo-0-1
+0:36:34,range select,geo-0-1
+0:36:35,range select,geo-0-1
+0:36:36,range select,geo-0-1
+0:36:38,range select,geo-0-1
+0:36:39,range select,geo-0-1
+0:36:43,brush,hist-3
+0:36:44,brush,hist-3
+0:36:45,brush,hist-3
+0:36:46,brush,hist-3
+0:36:47,brush,hist-3
+0:36:49,brush,hist-3
+0:36:50,brush,hist-3
+0:36:51,brush,hist-3
+0:36:52,brush,hist-3
+0:36:53,brush,hist-3
+0:36:54,brush,hist-3
+0:36:55,brush,hist-3
+0:36:56,brush,hist-3
+0:37:00,brush,hist-3
+0:37:01,brush,hist-3
+0:37:01,brush,hist-4
+0:37:03,pan,geo-0-1
+0:37:04,pan,geo-0-1
+0:37:05,brush,hist-2
+0:37:06,brush,hist-2
+0:37:07,brush,hist-2
+0:37:08,brush,hist-2
+0:37:09,brush,hist-2
+0:37:09,brush,hist-3
+0:37:09,brush,hist-2
+0:37:10,brush,hist-2
+0:37:11,brush,hist-2
+0:37:13,brush,hist-2
+0:37:14,brush,hist-2
+0:37:15,brush,hist-2
+0:37:16,brush,hist-2
+0:37:17,brush,hist-2
+0:37:18,brush,hist-2
+0:37:19,range select,hist-2
+0:37:20,pan,geo-0-1
+0:37:21,pan,geo-0-1
+0:37:27,brush,hist-3
+0:37:28,brush,hist-3
+0:37:29,brush,hist-3
+0:37:30,brush,hist-3
+0:37:31,brush,hist-3
+0:37:32,brush,hist-3
+0:37:33,brush,hist-3
+0:37:33,brush,hist-2
+0:37:34,brush,hist-2
+0:37:35,brush,hist-2
+0:37:36,brush,hist-2
+0:37:37,brush,hist-2
+0:37:38,brush,hist-2
+0:37:39,brush,hist-2
+0:37:40,brush,hist-2
+0:37:41,brush,hist-2
+0:37:42,brush,hist-2
+0:37:43,brush,hist-2
+0:37:44,brush,hist-2
+0:37:45,brush,hist-2
+0:37:46,brush,hist-2
+0:37:47,brush,hist-2
+0:37:48,brush,hist-2
+0:37:49,brush,hist-2
+0:37:50,brush,hist-2
+0:37:51,brush,hist-2
+0:37:53,range select,hist-2
+0:38:05,brush,bar-5
+0:38:08,pan,geo-0-1
+0:38:09,pan,geo-0-1
+0:38:12,pan,geo-0-1
+0:38:13,pan,geo-0-1
+0:38:20,brush,hist-2
+0:38:21,brush,hist-2
+0:38:22,brush,hist-2
+0:38:23,brush,hist-2
+0:38:24,brush,hist-2
+0:38:26,brush,hist-2
+0:38:27,brush,hist-2
+0:38:28,brush,hist-2
+0:38:29,brush,hist-2
+0:38:30,brush,hist-2
+0:38:31,brush,hist-2
+0:38:32,brush,hist-2
+0:38:33,brush,hist-2
+0:38:34,brush,hist-2
+0:38:35,brush,hist-2
+0:38:38,brush,hist-2
+0:38:39,brush,hist-2
+0:38:45,brush,hist-2
+0:38:46,brush,hist-2
+0:38:47,brush,hist-2
+0:38:48,brush,hist-2
+0:38:49,brush,hist-2
+0:38:50,brush,hist-2
+0:38:50,brush,hist-3
+0:38:51,brush,hist-3
+0:38:52,brush,hist-3
+0:38:52,brush,bar-5
+0:38:53,pan,geo-0-1
+0:38:54,brush,hist-3
+0:38:55,brush,hist-3
+0:38:56,brush,hist-3
+0:38:57,brush,hist-3
+0:38:58,brush,hist-3
+0:38:59,brush,hist-3
+0:39:00,brush,hist-3
+0:39:01,brush,hist-3
+0:39:02,brush,hist-3
+0:39:03,brush,hist-3
+0:39:04,brush,hist-3
+0:39:05,brush,hist-3
+0:39:06,brush,hist-3
+0:39:07,brush,hist-3
+0:39:08,brush,hist-3
+0:39:09,brush,hist-3
+0:39:10,brush,hist-3
+0:39:11,brush,hist-3
+0:39:12,brush,hist-3
+0:39:13,brush,hist-3
+0:39:14,brush,hist-3
+0:39:15,brush,hist-3
+0:39:16,brush,hist-3
+0:39:17,brush,hist-3
+0:39:18,brush,hist-3
+0:39:19,brush,hist-3
+0:39:20,brush,hist-3
+0:39:21,brush,hist-3
+0:39:22,brush,hist-3
+0:39:23,brush,hist-3
+0:39:24,brush,hist-3
+0:39:25,brush,hist-3
+0:39:26,brush,hist-3
+0:39:27,brush,hist-3
+0:39:28,brush,hist-3
+0:39:29,brush,hist-3
+0:39:30,brush,hist-3
+0:39:31,brush,hist-3
+0:39:32,brush,hist-3
+0:39:33,brush,hist-3
+0:39:34,brush,hist-3
+0:39:34,brush,hist-4
+0:39:35,brush,hist-4
+0:39:36,brush,hist-4
+0:39:37,brush,hist-4
+0:39:38,brush,hist-4
+0:39:39,brush,hist-4
+0:39:40,brush,hist-4
+0:39:41,brush,hist-4
+0:39:42,brush,hist-4
+0:39:43,brush,hist-4
+0:39:44,brush,hist-4
+0:39:45,brush,hist-4
+0:39:46,brush,hist-4
+0:39:47,brush,hist-4
+0:39:48,brush,hist-4
+0:39:49,brush,hist-4
+0:39:50,brush,hist-4
+0:39:51,brush,hist-4
+0:39:52,brush,hist-4
+0:39:52,brush,bar-5
+0:39:53,brush,bar-5
+0:39:54,brush,bar-5
+0:39:55,brush,bar-5
+0:39:56,brush,bar-5
+0:40:09,pan,geo-0-1
+0:40:10,pan,geo-0-1
+0:40:11,pan,geo-0-1
+0:40:12,zoom,geo-0-1
+0:40:13,pan,geo-0-1
+0:40:14,pan,geo-0-1
+0:40:15,pan,geo-0-1
+0:40:16,pan,geo-0-1
+0:40:17,pan,geo-0-1
+0:40:18,pan,geo-0-1
+0:40:19,pan,geo-0-1
+0:40:20,range select,geo-0-1
+0:40:24,pan,geo-0-1
+0:40:25,pan,geo-0-1
+0:40:26,pan,geo-0-1
+0:40:27,pan,geo-0-1
+0:40:28,pan,geo-0-1
+0:40:29,pan,geo-0-1
+0:40:30,pan,geo-0-1
+0:40:31,pan,geo-0-1
+0:40:32,pan,geo-0-1
+0:40:33,range select,hist-2
+0:40:35,brush,hist-2
+0:40:36,brush,hist-2
+0:40:37,brush,hist-2
+0:40:38,brush,hist-2
+0:40:39,brush,hist-2
+0:40:40,brush,hist-2
+0:40:41,brush,hist-2
+0:40:42,brush,hist-2
+0:40:42,brush,bar-5
+0:40:43,pan,geo-0-1
+0:40:44,brush,hist-2
+0:40:45,brush,hist-2
+0:40:46,brush,hist-2
+0:40:47,brush,hist-2
+0:40:48,brush,hist-2
+0:40:49,brush,hist-2
+0:40:50,brush,hist-2
+0:40:51,brush,hist-2
+0:40:52,brush,hist-2
+0:40:53,brush,hist-2
+0:40:54,brush,hist-2
+0:40:55,brush,hist-2
+0:40:56,brush,hist-2
+0:40:57,brush,hist-2
+0:40:58,brush,hist-2
+0:40:59,brush,hist-2
+0:41:00,brush,hist-2
+0:41:01,brush,hist-2
+0:41:02,brush,hist-2
+0:41:03,brush,hist-2
+0:41:04,brush,hist-2
+0:41:05,brush,hist-2
+0:41:06,brush,hist-2
+0:41:07,brush,hist-2
+0:41:08,brush,hist-2
+0:41:09,brush,hist-2
+0:41:10,brush,hist-2
+0:41:11,brush,hist-2
+0:41:12,brush,hist-2
+0:41:13,brush,hist-2
+0:41:13,brush,hist-3
+0:41:14,brush,hist-3
+0:41:15,brush,hist-3
+0:41:16,brush,hist-3
+0:41:17,brush,hist-3
+0:41:18,brush,hist-3
+0:41:19,brush,hist-3
+0:41:20,brush,hist-3
+0:41:21,brush,hist-3
+0:41:22,brush,hist-3
+0:41:23,brush,hist-3
+0:41:24,brush,hist-3
+0:41:25,brush,hist-3
+0:41:26,brush,hist-3
+0:41:27,brush,hist-3
+0:41:28,brush,hist-3
+0:41:29,brush,hist-3
+0:41:29,brush,hist-2
+0:41:30,brush,hist-2
+0:41:31,brush,hist-2
+0:41:32,brush,hist-2
+0:41:33,brush,hist-2
+0:41:33,pan,geo-0-1
+0:41:34,pan,geo-0-1
+0:41:35,pan,geo-0-1
+0:41:36,pan,geo-0-1
+0:41:37,pan,geo-0-1
+0:41:38,pan,geo-0-1
+0:41:38,brush,hist-2
+0:41:39,brush,hist-2
+0:41:40,brush,hist-2
+0:41:41,brush,hist-2
+0:41:42,brush,hist-2
+0:41:43,brush,hist-2
+0:41:44,brush,hist-2
+0:41:45,brush,hist-2
+0:41:46,brush,hist-2
+0:41:49,brush,hist-2
+0:41:50,brush,hist-2
+0:41:51,brush,hist-2
+0:41:52,brush,hist-2
+0:41:53,brush,hist-2
+0:41:54,brush,hist-2
+0:41:55,brush,hist-2
+0:41:56,brush,hist-2
+0:41:57,brush,hist-2
+0:41:58,brush,hist-2
+0:41:59,brush,hist-2
+0:42:00,brush,hist-2
+0:42:01,brush,hist-2
+0:42:02,brush,hist-2
+0:42:06,brush,hist-2
+0:42:07,brush,hist-2
+0:42:08,brush,hist-2
+0:42:09,brush,hist-2
+0:42:10,brush,hist-2
+0:42:11,brush,hist-2
+0:42:12,brush,hist-2
+0:42:13,brush,hist-2
+0:42:14,brush,hist-2
+0:42:15,brush,hist-2
+0:42:16,brush,hist-2
+0:42:17,brush,hist-2
+0:42:18,brush,hist-2
+0:42:19,brush,hist-2
+0:42:20,brush,hist-2
+0:42:21,brush,hist-2
+0:42:22,brush,hist-2
+0:42:23,brush,hist-2
+0:42:24,brush,hist-2
+0:42:25,brush,hist-2
+0:42:26,brush,hist-2
+0:42:27,brush,hist-2
+0:42:28,brush,hist-2
+0:42:29,brush,hist-2
+0:42:30,brush,hist-2
+0:42:31,brush,hist-2
+0:42:32,brush,hist-2
+0:42:33,brush,hist-2
+0:42:34,brush,hist-2
+0:42:35,brush,hist-2
+0:42:36,brush,hist-2
+0:42:37,brush,hist-2
+0:42:38,brush,hist-2
+0:42:39,brush,hist-2
+0:42:40,brush,hist-2
+0:42:41,brush,hist-2
+0:42:43,pan,geo-0-1
+0:42:44,brush,hist-3
+0:42:45,brush,hist-3
+0:42:46,brush,hist-3
+0:42:47,brush,hist-3
+0:42:47,brush,hist-4
+0:42:48,brush,hist-4
+0:42:49,brush,hist-4
+0:42:50,brush,hist-4
+0:42:51,brush,hist-4
+0:42:52,brush,hist-4
+0:42:53,brush,bar-5
+0:42:54,brush,bar-5
+0:42:55,brush,bar-5
+0:42:56,brush,bar-5
+0:43:00,brush,bar-5
+0:43:01,brush,bar-5
+0:43:17,pan,geo-0-1
+0:43:18,zoom,geo-0-1
+0:43:26,pan,geo-0-1
+0:43:27,pan,geo-0-1
+0:43:28,pan,geo-0-1
+0:43:29,pan,geo-0-1
+0:43:33,pan,geo-0-1
+0:43:52,pan,geo-0-1
+0:43:53,pan,geo-0-1
+0:43:54,pan,geo-0-1
+0:44:01,pan,geo-0-1
+0:44:02,pan,geo-0-1
+0:44:03,pan,geo-0-1
+0:44:18,pan,geo-0-1
+0:44:19,pan,geo-0-1
+0:44:20,pan,geo-0-1
+0:44:21,pan,geo-0-1
+0:44:22,pan,geo-0-1
+0:44:23,pan,geo-0-1
+0:44:24,pan,geo-0-1
+0:44:25,pan,geo-0-1
+0:44:26,pan,geo-0-1
+0:44:27,pan,geo-0-1
+0:44:28,pan,geo-0-1
+0:44:29,pan,geo-0-1
+0:44:30,pan,geo-0-1
+0:44:31,pan,geo-0-1
+0:44:32,pan,geo-0-1
+0:44:33,pan,geo-0-1
+0:44:47,pan,geo-0-1
+0:44:48,pan,geo-0-1
+0:44:50,pan,geo-0-1
+0:44:51,pan,geo-0-1
+0:45:02,pan,geo-0-1
+0:45:03,pan,geo-0-1
+0:45:04,pan,geo-0-1
+0:45:09,brush,hist-3
+0:45:10,brush,hist-3
+0:45:10,brush,hist-4
+0:45:10,brush,bar-5
+0:45:26,brush,hist-3
+0:45:27,brush,hist-3
+0:45:28,brush,hist-3
+0:45:29,brush,hist-3
+0:45:30,brush,hist-3
+0:45:33,brush,hist-3
+0:45:33,brush,hist-4
+0:45:34,brush,hist-4
+0:45:34,brush,hist-3

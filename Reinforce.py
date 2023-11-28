@@ -20,8 +20,8 @@ class Policy(nn.Module):
         super(Policy, self).__init__()
         self.data = []
 
-        self.fc1 = nn.Linear(9, 128)
-        self.fc2 = nn.Linear(128, 9)
+        self.fc1 = nn.Linear(4, 64)
+        self.fc2 = nn.Linear(64, 4)
         self.gamma=gamma
         self.temperature = tau
         self.optimizer = optim.Adam(self.parameters(), lr=learning_rate)
@@ -55,7 +55,7 @@ class Reinforce():
     def train(self):
         
         all_predictions=[]
-        for _ in range(50):
+        for _ in range(5):
             s = self.env.reset(all = False, test = False)
             s=np.array(s)
             done = False
@@ -127,8 +127,7 @@ def run_experiment(user_list,algo,hyperparam_file):
     temperatures = hyperparams['temperatures']
 
     # aggregate_plotter = plotting.plotter(None)
-    y_accu_all = []
-
+    final_accu = np.zeros(9, dtype=float)
     for feedback_file in user_list:
         # Extract user-specific threshold values
         threshold_h = hyperparams['threshold']
@@ -138,6 +137,8 @@ def run_experiment(user_list,algo,hyperparam_file):
         excel_files = glob.glob(os.getcwd() + '/RawInteractions/faa_data/*.csv')
         raw_file = [string for string in excel_files if user_name in string][0]
         
+        accu = []
+        env = environment5.environment5()
         for thres in threshold_h:
             max_accu = -1
             best_learning_rate = 0
@@ -145,9 +146,7 @@ def run_experiment(user_list,algo,hyperparam_file):
             best_agent=None
             best_policy=None
             best_temp=0
-
-            env = environment5.environment5()
-            env.process_data('faa', raw_file, feedback_file, thres)            
+            env.process_data('faa', raw_file, feedback_file, thres, 'Reinforce')            
             for learning_rate in learning_rates:
                 for gamma in gammas:
                     for temp in temperatures:
@@ -162,14 +161,17 @@ def run_experiment(user_list,algo,hyperparam_file):
                             best_policy = policy
                             best_temp=temp
 
-            print("#TRAINING: User :{}, Threshold : {:.1f}, Accuracy: {}, LR: {} ,Discount: {}, Temperature:{}".format(user_name, thres,max_accu,best_learning_rate,best_gamma,best_temp))
+            # print("#TRAINING: User :{}, Threshold : {:.1f}, Accuracy: {}, LR: {} ,Discount: {}, Temperature:{}".format(user_name, thres,max_accu,best_learning_rate,best_gamma,best_temp))
             test_accuracy = best_agent.test(best_policy)
-            
-            print("#TESTING User :{}, Threshold : {:.1f}, Accuracy: {}, LR: {} ,Discount: {}, Temperature: {}".format(user_name, thres,
-                                                                                                     max_accu,
-                                                                                                     best_learning_rate,
-                                                                                                     best_gamma,best_temp))
-     
+            print("User :{}, Threshold : {:.1f}, Accuracy: {}".format(user_name, thres, test_accuracy))
+            # print("#TESTING User :{}, Threshold : {:.1f}, Accuracy: {}, LR: {} ,Discount: {}, Temperature: {}".format(user_name, thres, max_accu,best_learning_rate,best_gamma,best_temp))
+            accu.append(test_accuracy) 
+        print(user_name, accu)
+        final_accu = np.add(final_accu, accu)
+    final_accu /= len(user_list)
+    print("Reinforce: ")
+    print(np.round(final_accu, decimals=2))
+
 if __name__ == '__main__':
     env = environment5.environment5()
     user_list_faa = env.user_list_faa

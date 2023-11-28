@@ -27,8 +27,8 @@ class ActorCritic(nn.Module):
         self.gamma = gamma
 
         # Neural network architecture
-        self.fc1 = nn.Linear(9, 64)
-        self.fc_pi = nn.Linear(64, 9)#actor
+        self.fc1 = nn.Linear(4, 64)
+        self.fc_pi = nn.Linear(64, 4)#actor
         self.fc_v = nn.Linear(64, 1)#critic
 
         # Optimizer
@@ -132,7 +132,7 @@ class Agent():
         model = ActorCritic(self.learning_rate, self.gamma)
         score = 0.0
         all_predictions = []
-        for _ in range(40):
+        for _ in range(10):
             done = False
             s = self.env.reset(all = False, test = False)
 
@@ -222,8 +222,7 @@ def run_experiment(user_list, algo, hyperparam_file):
 
     # Create plotter and misc objects
     # aggregate_plotter =plotting.plotter(None)
-    y_accu_all = []
-
+    final_accu = np.zeros(9, dtype=float)
     # Loop over all users
     for feedback_file in user_list:
         # Extract user-specific threshold values
@@ -234,7 +233,9 @@ def run_experiment(user_list, algo, hyperparam_file):
         # print(user_name)
         excel_files = glob.glob(os.getcwd() + '/RawInteractions/faa_data/*.csv')
         raw_file = [string for string in excel_files if user_name in string][0]
-        
+
+        accu = []
+        env = environment5.environment5()
         # Loop over all threshold values
         for thres in threshold_h:
             max_accu = -1
@@ -243,8 +244,7 @@ def run_experiment(user_list, algo, hyperparam_file):
             best_agent = None
             best_model = None
 
-            env = environment5.environment5()
-            env.process_data('faa', raw_file, feedback_file, thres)
+            env.process_data('faa', raw_file, feedback_file, thres, 'Actor-Critic')
             # Loop over all combinations of hyperparameters
             for learning_rate in learning_rates:
                 for gamma in gammas:
@@ -260,35 +260,17 @@ def run_experiment(user_list, algo, hyperparam_file):
                         best_model = model
 
             # Print training results
-            print("#TRAINING: User: {}, Threshold: {:.1f}, Accuracy: {:.2f}, LR: {}, Discount: {}".format(user_name, thres, max_accu, best_learning_rate, best_gamma))
+            # print("#TRAINING: User: {}, Threshold: {:.1f}, Accuracy: {:.2f}, LR: {}, Discount: {}".format(user_name, thres, max_accu, best_learning_rate, best_gamma))
 
             # Test the best agent and store results in DataFrame
             test_accuracy = best_agent.test(best_model)
-            y_accu.append(test_accuracy)
-            # result_dataframe = pd.concat([result_dataframe, pd.DataFrame({
-            #     'User': [user_name],
-            #     'Threshold': [thres],
-            #     'LearningRate': [best_learning_rate],
-            #     'Discount': [best_gamma],
-            #     'Accuracy': [test_accuracy],
-            #     'StateAccuracy': [accuracy_per_state],
-            #     'Algorithm': [title],
-            # })], ignore_index=True)
-
-            # Print testing results
-            print("#TESTING: User: {}, Threshold: {:.1f}, Accuracy: {:.2f}, LR: {}, Discount: {}".
-                  format(user_name, thres, test_accuracy, best_learning_rate, best_gamma))
-
-        # Plot user-specific results
-        # plotter.plot_main(y_accu, user_name)
-        # y_accu_all.append(y_accu)
-
-    # Aggregate all results and plot
-
-    # aggregate_plotter.aggregate(y_accu_all, title)
-
-    # Save result DataFrame to CSV file
-    # result_dataframe.to_csv("Experiments_Folder/{}.csv".format(title), index=False)
+            accu.append(test_accuracy)
+            print("User :{}, Threshold : {:.1f}, Accuracy: {}".format(user_name, thres, test_accuracy))
+        print(user_name, accu)
+        final_accu = np.add(final_accu, accu)
+    final_accu /= len(user_list)
+    print("Actor-Critic: ")
+    print(np.round(final_accu, decimals=2))
 
 
 def get_user_name(raw_fname):

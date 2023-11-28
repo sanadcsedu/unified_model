@@ -4,6 +4,7 @@ from collections import defaultdict
 import itertools
 import environment5 as environment5
 import multiprocessing
+from multiprocessing import Pool
 import time
 import random
 from pathlib import Path
@@ -94,27 +95,19 @@ class Qlearning:
 
             state = env.reset(all=False, test=True)
             stats = []
-            split_accuracy=defaultdict(list)
-
             model_actions = []
-            # reward_accumulated=[0.000000000000000000001]
-            # reward_possible=[0.000000000000000000001]
-            policy = self.epsilon_greedy_policy(Q, epsilon, len(env.valid_actions))
+            
+            policy = self.epsilon_greedy_policy(Q, epsilon, len(env.action_space))
 
             for t in itertools.count():
-                # Take a step
-
-                action = policy(state)
+            
+                action_probs = policy(state)
+                action = np.random.choice(np.arange(len(action_probs)), p=action_probs)
                 model_actions.append(action)
                 next_state, reward, done, prediction  = env.step(state, action, True)
-                # reward_accumulated.append(reward)
-
-                # split_accuracy[state].append(prediction)
+            
                 stats.append(prediction)
-                # reward_accumulated.append(reward)
-                # reward_possible.append(true_reward)
-
-                # print(prediction)
+            
                 # Turning off the Q-Learning update when testing, the prediction is based on the Learned model from first x% interactions
                 best_next_action = np.argmax(Q[next_state])
                 td_target = reward + discount_factor * Q[next_state][best_next_action]
@@ -129,9 +122,35 @@ class Qlearning:
 
 if __name__ == "__main__":
     env = environment5.environment5()
-    user_list_faa = env.user_list_faa
-    obj2 = misc.misc(len(user_list_faa))
-    p8 = multiprocessing.Process(target=obj2.hyper_param, args=(env,user_list_faa, 'QLearn',50,))
-    p8.start()
-    p8.join()
+    user_list = env.user_list_faa
+    obj2 = misc.misc(len(user_list))
+
+    result_queue = multiprocessing.Queue()
+    p1 = multiprocessing.Process(target=obj2.hyper_param, args=(env,user_list[:2], 'Qlearn',1, result_queue,))
+    p2 = multiprocessing.Process(target=obj2.hyper_param, args=(env,user_list[2:4], 'Qlearn',1, result_queue,))
+    p3 = multiprocessing.Process(target=obj2.hyper_param, args=(env,user_list[4:6], 'Qlearn',1, result_queue,))
+    p4 = multiprocessing.Process(target=obj2.hyper_param, args=(env,user_list[6:], 'Qlearn',1, result_queue,))
     
+    p1.start()
+    p2.start()
+    p3.start()
+    p4.start()
+    final_result = np.zeros(9, dtype = float)
+    p1.join()
+    # print(result_queue.get())
+    final_result = np.add(result_queue, result_queue.get())
+    p2.join()
+    # print(result_queue.get())
+    final_result = np.add(result_queue, result_queue.get())
+    p3.join()
+    # print(result_queue.get())
+    final_result = np.add(result_queue, result_queue.get())
+    p4.join()
+    # print(result_queue.get())
+    final_result = np.add(result_queue, result_queue.get())
+    final_result /= 4
+    print("Q-Learning")
+    print(np.round(final_result, decimals=2))
+
+    
+        

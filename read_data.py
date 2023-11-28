@@ -84,6 +84,33 @@ class read_data:
         #     print(items) 
         return holder
 
+    #this merge2 is from the contextual bandit experiment where we give a minimum reward to the 
+    def merge2(self, raw_fname, excel_fname):
+        raw_interaction = open(raw_fname, 'r')
+        csv_reader = csv.reader(raw_interaction)
+        raw_data = self.raw_to_memory(csv_reader)
+        raw_interaction.close()
+
+        df_excel = pd.read_excel(excel_fname, sheet_name="Sheet3 (2)", usecols="A:G")
+        feedback_data = self.excel_to_memory(df_excel)
+        holder = []
+        idx = 0
+        idx2 = 0
+        for idx in range(len(feedback_data)):
+            # pdb.set_trace()
+            while idx2 < len(raw_data) and feedback_data[idx][0] >= raw_data[idx2][0] :
+                # 0: index, 1: action, 2: visualization, 3: high_level_state, 4: reward 
+                if(feedback_data[idx][1] == 'observation'):
+                    reward = 0.1
+                else:
+                    reward = 1
+                holder.append([idx2, raw_data[idx2][1], raw_data[idx2][2], feedback_data[idx][1], reward])
+                idx2 += 1
+            if len(holder) > 1:
+                holder[idx2 - 1][4] = 1
+            idx += 1
+        return holder
+        
 if __name__ == "__main__":
     obj = read_data()
     print(obj.raw_files)

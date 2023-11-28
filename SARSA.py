@@ -106,31 +106,23 @@ class TD_SARSA:
         epsilon = epsilon
 
         for i_episode in range(1):
-
-
             # Reset the environment and pick the first action
             state = env.reset(all=False, test=True)
 
             stats = []
-            # reward_accumulated = [0.000000000000000000001]
-            # reward_possible = [0.000000000000000000001]
-            split_accuracy = defaultdict(list)
-            policy = self.epsilon_greedy_policy(Q, epsilon, len(env.valid_actions))
+            
+            policy = self.epsilon_greedy_policy(Q, epsilon, len(env.action_space))
 
-            # model_actions = []
-            action = policy(state)
             for t in itertools.count():
-
-                # model_actions.append(action)
+                action_probs = policy(state)
+                action = np.random.choice(np.arange(len(action_probs)), p=action_probs)
                 next_state, reward, done, prediction = env.step(state, action, True)
                 stats.append(prediction)
-                # split_accuracy[state].append(prediction)
-                # reward_accumulated.append(reward)
-                # reward_possible.append(true_reward)
-
+            
                 # Pick the next action
-                next_action = policy(next_state)
-
+                next_action_probs = policy(next_state)
+                next_action = np.random.choice(np.arange(len(next_action_probs)), p=next_action_probs)
+            
                 # TD Update
                 td_target = reward + discount_factor * Q[next_state][next_action]
                 td_delta = td_target - Q[state][action]
@@ -145,8 +137,34 @@ class TD_SARSA:
 
 if __name__ == "__main__":
     env = environment5.environment5()
-    user_list_faa = env.user_list_faa
-    obj2 = misc.misc(len(user_list_faa))
-    p8 = multiprocessing.Process(target=obj2.hyper_param, args=(env,user_list_faa, 'SARSA',50,))
-    p8.start()
-    p8.join()
+    user_list = env.user_list_faa
+    obj2 = misc.misc(len(user_list))
+
+    result_queue = multiprocessing.Queue()
+    p1 = multiprocessing.Process(target=obj2.hyper_param, args=(env,user_list[:2], 'SARSA',1, result_queue,))
+    p2 = multiprocessing.Process(target=obj2.hyper_param, args=(env,user_list[2:4], 'SARSA',1, result_queue,))
+    p3 = multiprocessing.Process(target=obj2.hyper_param, args=(env,user_list[4:6], 'SARSA',1, result_queue,))
+    p4 = multiprocessing.Process(target=obj2.hyper_param, args=(env,user_list[6:], 'SARSA',1, result_queue,))
+    
+    p1.start()
+    p2.start()
+    p3.start()
+    p4.start()
+    final_result = np.zeros(9, dtype = float)
+    p1.join()
+    # print(result_queue.get())
+    final_result = np.add(result_queue, result_queue.get())
+    p2.join()
+    # print(result_queue.get())
+    final_result = np.add(result_queue, result_queue.get())
+    p3.join()
+    # print(result_queue.get())
+    final_result = np.add(result_queue, result_queue.get())
+    p4.join()
+    # print(result_queue.get())
+    final_result = np.add(result_queue, result_queue.get())
+    final_result /= 4
+    print("SARSA")
+    print(np.round(final_result, decimals=2))
+
+    
