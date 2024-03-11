@@ -29,22 +29,10 @@ class misc:
         self.epsilon_h = hyperparams['epsilon']
         self.threshold_h = hyperparams['threshold']
         # self.main_states= self.get_states()
-        self.prog = users * len(self.epsilon_h) * len(self.alpha_h) * len(self.discount_h) * len(self.threshold_h)
 
     def get_user_name(self, raw_fname):
         user = Path(raw_fname).stem.split('-')[0]
         return user
-
-    # def get_states(self, task = 'faa'):
-    #     if task == 'faa':
-    #         vizs = ['bar-4', 'bar-2', 'hist-3', 'scatterplot-0-1']
-    #         high_level_states = ['observation', 'generalization', 'question', 'hypothesis']
-    #         states = []
-    #         for v in vizs:
-    #             for s in high_level_states:
-    #                 str = v + '+' + s
-    #                 states.append(str)
-    #         return states             
 
     def hyper_param(self, env, users_hyper, algorithm, epoch, result_queue):
         """
@@ -82,11 +70,9 @@ class misc:
                                 if algorithm == 'Qlearn':
                                     obj = Qlearning.Qlearning()
                                     Q, train_accuracy = obj.q_learning(env, epoch, dis, alp, eps)
-                                    # print(train_accuracy)
                                 else:
                                     obj = SARSA.TD_SARSA()
                                     Q, train_accuracy = obj.sarsa(env, epoch, dis, alp, eps)
-                                    # print(train_accuracy)
                                 if max_accu_thres < train_accuracy:
                                     max_accu_thres = train_accuracy
                                     best_eps = eps
@@ -95,26 +81,22 @@ class misc:
                                     best_q=Q
                                     best_obj=obj
                                 max_accu_thres = max(max_accu_thres, train_accuracy)
-                # print("Top Training Accuracy: {}, Threshold: {}".format(max_accu_thres, thres))
-                test_accuracy = best_obj.test(env, best_q, best_discount, best_alpha, best_eps)
-                # print("User :{}, Threshold : {:.1f}, Accuracy: {}".format(user_name, thres, test_accuracy))
-
-                # accuracy_per_state=self.format_split_accuracy(split_accuracy)
-
-                # print(
-                #     "Algorithm:{} , User:{}, Threshold: {}, Test Accuracy:{},  Epsilon:{}, Alpha:{}, Discount:{}".format(
-                #         algorithm,
-                #         user_name, thres, test_accuracy, best_eps, best_alpha,
-                #         best_discount))
+                test_accs = []
+                test_env = env
+                for _ in range(5):
+                    test_model = best_obj
+                    test_q, test_discount, test_alpha, test_eps = best_q, best_discount, best_alpha, best_eps
+                    temp_accuracy = test_model.test(env, test_q, test_discount, test_alpha, test_eps)
+                    test_accs.append(temp_accuracy)
+                
+                test_accuracy = np.mean(test_accs)
+                # test_accuracy = best_obj.test(env, best_q, best_discount, best_alpha, best_eps)
                 accu.append(test_accuracy)
-                ###move to new threshold:
                 env.reset(True, False)
-            print(user_name, accu)
+            # print(user[0], accu)
+            # print(user[0], ", ".join(f"{x:.2f}" for x in accu))
             final_accu = np.add(final_accu, accu)
         final_accu /= len(users_hyper)
         # print(algorithm)
         # print(np.round(final_accu, decimals=2))
         result_queue.put(final_accu)
-
-
-

@@ -1,0 +1,17 @@
+User,Dataset,geo01,hist2,hist3,hist4,bar5,Phase
+u10,Brightkite,0.71,0.0,0.0,0.0,0.29,First
+u10,Brightkite,1.0,0.0,0.0,0.0,0.0,Second
+u15,Brightkite,0.6,0.01,0.01,0.03,0.35,First
+u15,Brightkite,1.0,0.0,0.0,0.0,0.0,Second
+u12,Brightkite,0.8,0.1,0.05,0.0,0.05,First
+u12,Brightkite,1.0,0.0,0.0,0.0,0.0,Second
+u11,Brightkite,0.24,0.29,0.02,0.26,0.18,First
+u11,Brightkite,0.0,1.0,0.0,0.0,0.0,Second
+u9,Brightkite,0.92,0.0,0.0,0.02,0.06,First
+u9,Brightkite,1.0,0.0,0.0,0.0,0.0,Second
+u16,Brightkite,0.66,0.05,0.07,0.11,0.11,First
+u16,Brightkite,0.0,0.0,0.0,0.0,1.0,Second
+u13,Brightkite,0.73,0.06,0.03,0.12,0.06,First
+u13,Brightkite,1.0,0.0,0.0,0.0,0.0,Second
+u14,Brightkite,0.5,0.15,0.06,0.06,0.22,First
+u14,Brightkite,1.0,0.0,0.0,0.0,0.0,Second

@@ -59,26 +59,22 @@ class read_data:
         raw_interaction = open(raw_fname, 'r')
         csv_reader = csv.reader(raw_interaction)
         raw_data = self.raw_to_memory(csv_reader)
-        # for idx, rows in enumerate(raw_data):
-        #     print(idx, rows)
-        # print("---------")
         raw_interaction.close()
 
         df_excel = pd.read_excel(excel_fname, sheet_name="Sheet3 (2)", usecols="A:G")
         feedback_data = self.excel_to_memory(df_excel)
-        # for rows in feedback_data:
-        #     print(rows)
-
+        
         holder = []
         idx = 0
         idx2 = 0
         for idx in range(len(feedback_data)):
-            
+            # print(feedback_data[idx])
             while idx2 < len(raw_data) and feedback_data[idx][0] >= raw_data[idx2][0] :
-                # 0: index, 1: action, 2: visualization, 3: high_level_state, 4: reward 
-                holder.append([idx2, raw_data[idx2][1], raw_data[idx2][2], feedback_data[idx][1], 0])
+                # 0: index, 1: time 2: action, 3: visualization, 4: high_level_state, 5: reward 
+                holder.append([idx2, raw_data[idx2][0], raw_data[idx2][1], raw_data[idx2][2], feedback_data[idx][1], 0])
                 idx2 += 1
-            holder[idx2 - 1][4] = 1
+            if len(holder) > 1:
+                holder[idx2 - 1][5] = 1 
             idx += 1
         # for items in holder:
         #     print(items) 
@@ -101,7 +97,7 @@ class read_data:
             while idx2 < len(raw_data) and feedback_data[idx][0] >= raw_data[idx2][0] :
                 # 0: index, 1: action, 2: visualization, 3: high_level_state, 4: reward 
                 if(feedback_data[idx][1] == 'observation'):
-                    reward = 0.1
+                    reward = 0.2
                 else:
                     reward = 1
                 holder.append([idx2, raw_data[idx2][1], raw_data[idx2][2], feedback_data[idx][1], reward])

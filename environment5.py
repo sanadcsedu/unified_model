@@ -13,6 +13,7 @@ class environment5:
     def __init__(self):
         path = os.getcwd()
         self.user_list_faa = glob.glob(path + '/FeedbackLog/*faa.xlsx')
+        self.user_list_brightkite = glob.glob(path + '/FeedbackLog/*brightkite.xlsx')
         self.action_space = {'pan': 0, 'zoom': 1, 'brush': 2, 'range select': 3}
         self.steps = 0
         self.done = False  # Done exploring the current subtask
@@ -39,41 +40,34 @@ class environment5:
 
 
     def get_state(self, task, visualization, high_level_state, algo):
-        if algo == 'Qlearn' or algo == 'SARSA':
-            # state = visualization + '+' + high_level_state
-            state = visualization
-        else: 
-            if task == 'faa':
-                vizs = ['bar-4', 'bar-2', 'hist-3', 'scatterplot-0-1']
-            else:
-                vizs = ['bar-5', 'hist-2', 'hist-3', 'hist-4', 'geo-0-1']
-            state = np.zeros(len(vizs), dtype = np.int)
-            for idx, v in enumerate(vizs):
-                if v == visualization:
-                    state[idx] = 1
-                    break
-
-            # state = np.zeros(9, dtype = np.int)
-            # if task == 'faa':
-            #     vizs = ['bar-4', 'bar-2', 'hist-3', 'scatterplot-0-1']
-            # else:
-            #     vizs = ['bar-5', 'hist-2', 'hist-3', 'hist-4', 'geo-0-1']
-            # for idx, v in enumerate(vizs):
-            #     if v == visualization:
-            #         state[idx] = 1
-            #         break
-            # high_level_states = ['observation', 'generalization', 'question', 'hypothesis']
-            # idx = 0
-            # for idx, s in enumerate(high_level_states):
-            #     if s == high_level_state:
-            #         state[5+idx] = 1
-            #         break
-            return state
+        ##################Uses combination of visualization and mental states as features ##############
+        if task == 'faa':
+            state = np.zeros(8, dtype = np.int)
+            vizs = ['bar-4', 'bar-2', 'hist-3', 'scatterplot-0-1']
+        else:
+            state = np.zeros(9, dtype = np.int)
+            vizs = ['bar-5', 'hist-2', 'hist-3', 'hist-4', 'geo-0-1']
+        for idx, v in enumerate(vizs):
+            if v == visualization:
+                state[idx] = 1
+                break
+        high_level_states = ['observation', 'generalization', 'question', 'hypothesis']
+        idx = 0
+        for idx, s in enumerate(high_level_states):
+            if s == high_level_state:
+                state[len(vizs) +idx] = 1
+                break
+        ##########################################################################################
+        if algo == 'Qlearn' or algo == 'SARSA' or algo == 'Greedy' or algo == 'WSLS':
+            state_str = ''.join(map(str, state))
+            return state_str    
+        return state
+    
 
     def process_data(self, task, raw_file, feedback_file, thres, algo):
         # pdb.set_trace()
         obj = read_data()
-        data = obj.merge2(raw_file, feedback_file)
+        data = obj.merge(raw_file, feedback_file)
         # for index, row in df.iterrows():
         for d in data:
             state = self.get_state(task, d[2], d[3], algo)
@@ -131,3 +125,50 @@ class environment5:
 
         return next_state, cur_reward, self.done, prediction
 
+
+
+# def get_state(self, task, visualization, high_level_state, algo):
+#         if algo == 'Qlearn' or algo == 'SARSA':
+#             # state = visualization + '+' + high_level_state # states has both visualization and mental states as features
+#             # state = visualization #only visualizations
+#             state = high_level_state #only mental states of the users 
+#         else: 
+#             #######################################################
+#             #uses only visualizations as states 
+#             # if task == 'faa':
+#             #     vizs = ['bar-4', 'bar-2', 'hist-3', 'scatterplot-0-1']
+#             # else:
+#             #     vizs = ['bar-5', 'hist-2', 'hist-3', 'hist-4', 'geo-0-1']
+#             # state = np.zeros(len(vizs), dtype = np.int)
+#             # for idx, v in enumerate(vizs):
+#             #     if v == visualization:
+#             #         state[idx] = 1
+#             #         break
+#             ############################################################
+#             ###################Uses combination of visualization and mental states as features ##############
+#             # state = np.zeros(9, dtype = np.int)
+#             # if task == 'faa':
+#             #     vizs = ['bar-4', 'bar-2', 'hist-3', 'scatterplot-0-1']
+#             # else:
+#             #     vizs = ['bar-5', 'hist-2', 'hist-3', 'hist-4', 'geo-0-1']
+#             # for idx, v in enumerate(vizs):
+#             #     if v == visualization:
+#             #         state[idx] = 1
+#             #         break
+#             # high_level_states = ['observation', 'generalization', 'question', 'hypothesis']
+#             # idx = 0
+#             # for idx, s in enumerate(high_level_states):
+#             #     if s == high_level_state:
+#             #         state[5+idx] = 1
+#             #         break
+#             ###########################################################################################
+#             ########################################using only mental states as state##################
+#             state = np.zeros(4, dtype = np.int)
+#             high_level_states = ['observation', 'generalization', 'question', 'hypothesis']
+#             idx = 0
+#             for idx, s in enumerate(high_level_states):
+#                 if s == high_level_state:
+#                     state[idx] = 1
+#                     break
+#             ############################################################################
+#             return state

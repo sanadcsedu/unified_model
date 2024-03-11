@@ -126,10 +126,10 @@ if __name__ == "__main__":
     obj2 = misc.misc(len(user_list))
 
     result_queue = multiprocessing.Queue()
-    p1 = multiprocessing.Process(target=obj2.hyper_param, args=(env,user_list[:2], 'Qlearn',1, result_queue,))
-    p2 = multiprocessing.Process(target=obj2.hyper_param, args=(env,user_list[2:4], 'Qlearn',1, result_queue,))
-    p3 = multiprocessing.Process(target=obj2.hyper_param, args=(env,user_list[4:6], 'Qlearn',1, result_queue,))
-    p4 = multiprocessing.Process(target=obj2.hyper_param, args=(env,user_list[6:], 'Qlearn',1, result_queue,))
+    p1 = multiprocessing.Process(target=obj2.hyper_param, args=(env,user_list[:2], 'Qlearn',5, result_queue,))
+    p2 = multiprocessing.Process(target=obj2.hyper_param, args=(env,user_list[2:4], 'Qlearn',5, result_queue,))
+    p3 = multiprocessing.Process(target=obj2.hyper_param, args=(env,user_list[4:6], 'Qlearn',5, result_queue,))
+    p4 = multiprocessing.Process(target=obj2.hyper_param, args=(env,user_list[6:], 'Qlearn',5, result_queue,))
     
     p1.start()
     p2.start()
@@ -137,20 +137,16 @@ if __name__ == "__main__":
     p4.start()
     final_result = np.zeros(9, dtype = float)
     p1.join()
-    # print(result_queue.get())
-    final_result = np.add(result_queue, result_queue.get())
+    # temp = result_queue.get()
+    final_result = np.add(final_result, result_queue.get())
     p2.join()
     # print(result_queue.get())
-    final_result = np.add(result_queue, result_queue.get())
+    final_result = np.add(final_result, result_queue.get())
     p3.join()
     # print(result_queue.get())
-    final_result = np.add(result_queue, result_queue.get())
+    final_result = np.add(final_result, result_queue.get())
     p4.join()
     # print(result_queue.get())
-    final_result = np.add(result_queue, result_queue.get())
+    final_result = np.add(final_result, result_queue.get())
     final_result /= 4
-    print("Q-Learning")
-    print(np.round(final_result, decimals=2))
-
-    
-        
+    print("Q-Learning ", ", ".join(f"{x:.2f}" for x in final_result))

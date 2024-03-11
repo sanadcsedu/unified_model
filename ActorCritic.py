@@ -15,6 +15,7 @@ os.environ["KMP_DUPLICATE_LIB_OK"]="TRUE"
 from pathlib import Path
 import glob
 from tqdm import tqdm 
+import multiprocessing
 
 
 #Class definition for the Actor-Critic model
@@ -27,9 +28,9 @@ class ActorCritic(nn.Module):
         self.gamma = gamma
 
         # Neural network architecture
-        self.fc1 = nn.Linear(4, 64)
-        self.fc_pi = nn.Linear(64, 4)#actor
-        self.fc_v = nn.Linear(64, 1)#critic
+        self.fc1 = nn.Linear(8, 128)
+        self.fc_pi = nn.Linear(128, 4)#actor
+        self.fc_v = nn.Linear(128, 1)#critic
 
         # Optimizer
         self.optimizer = optim.Adam(self.parameters(), lr=learning_rate)
@@ -68,12 +69,8 @@ class ActorCritic(nn.Module):
         return v
 
     def put_data(self, transition):
-        """
-        Add a transition tuple to the data buffer.
-
-        Args:
-            transition (tuple): Tuple with the transition data (s, a, r, s_prime, done).
-        """
+        """Add a transition tuple to the data buffer.
+        Args:transition (tuple): Tuple with the transition data (s, a, r, s_prime, done)."""
 
         self.data.append(transition)
 
@@ -91,7 +88,7 @@ class ActorCritic(nn.Module):
             s, a, r, s_prime, done = transition
             s_lst.append(s)
             a_lst.append([a])
-            r_lst.append([r/100])
+            r_lst.append([r])
             s_prime_lst.append(s_prime)
             done_mask = 0.0 if done else 1.0
             done_lst.append([done_mask])
@@ -132,7 +129,7 @@ class Agent():
         model = ActorCritic(self.learning_rate, self.gamma)
         score = 0.0
         all_predictions = []
-        for _ in range(10):
+        for _ in range(5):
             done = False
             s = self.env.reset(all = False, test = False)
 
@@ -172,113 +169,120 @@ class Agent():
             s = self.env.reset(all=False, test=True)
             predictions = []
             score=0
+            # test = set()
             while not done:
                 prob = model.pi(torch.from_numpy(s).float())
                 m = Categorical(prob)
                 a = m.sample().item()
                 s_prime, r, done, pred = self.env.step(s, a, True)
                 predictions.append(pred)
-
+                
                 model.put_data((s, a, r, s_prime, done))
-
+                # test.add(a)
                 s = s_prime
-                # actions.append(a)
 
                 score += r
 
                 if done:
                     break
                 model.train_net()
-
+            # print(test)
             test_predictions.append(np.mean(predictions))
             # print("############ Test Accuracy :{},".format(np.mean(predictions)))
         return np.mean(test_predictions)
 
+class run_ac:
+    def __init__(self):
+        pass
 
+    def run_experiment(self, user_list, algo, hyperparam_file, result_queue):
+        # Load hyperparameters from JSON file
+        with open(hyperparam_file) as f:
+            hyperparams = json.load(f)
 
-def get_threshold(env, user):
-    env.process_data(user, 0)
-    counts = Counter(env.mem_roi)
-    proportions = []
-    total_count = len(env.mem_roi)
-
-    for i in range(1, max(counts.keys()) + 1):
-        current_count = sum(counts[key] for key in range(1, i + 1))
-        proportions.append(current_count / total_count)
-    return proportions[:-1]
-
-
-def run_experiment(user_list, algo, hyperparam_file):
-    # Load hyperparameters from JSON file
-    with open(hyperparam_file) as f:
-        hyperparams = json.load(f)
-
-    # Create result DataFrame with columns for relevant statistics
-    result_dataframe = pd.DataFrame(columns=['Algorithm', 'User', 'Threshold', 'LearningRate', 'Discount', 'Temperature', 'Accuracy', 'StateAccuracy', 'Reward'])
-    title = algo
-    # Extract hyperparameters from JSON file
-    learning_rates = hyperparams['learning_rates']
-    gammas = hyperparams['gammas']
-
-    # Create plotter and misc objects
-    # aggregate_plotter =plotting.plotter(None)
-    final_accu = np.zeros(9, dtype=float)
-    # Loop over all users
-    for feedback_file in user_list:
-        # Extract user-specific threshold values
+        # Extract hyperparameters from JSON file
+        learning_rates = hyperparams['learning_rates']
+        gammas = hyperparams['gammas']
         threshold_h = hyperparams['threshold']
-        # plotter = plotting.plotter(threshold_h)
-        y_accu = []
-        user_name = get_user_name(feedback_file)
-        # print(user_name)
-        excel_files = glob.glob(os.getcwd() + '/RawInteractions/faa_data/*.csv')
-        raw_file = [string for string in excel_files if user_name in string][0]
 
-        accu = []
-        env = environment5.environment5()
-        # Loop over all threshold values
-        for thres in threshold_h:
-            max_accu = -1
-            best_learning_rate = 0
-            best_gamma = 0
-            best_agent = None
-            best_model = None
+        final_accu = np.zeros(9, dtype=float)
+        # Loop over all users
+        for feedback_file in user_list:
 
-            env.process_data('faa', raw_file, feedback_file, thres, 'Actor-Critic')
-            # Loop over all combinations of hyperparameters
-            for learning_rate in learning_rates:
-                for gamma in gammas:
-                    agent = Agent(env, learning_rate, gamma)
-                    model, accuracies = agent.train()
+            user_name = self.get_user_name(feedback_file)
+            # print(user_name)
+            excel_files = glob.glob(os.getcwd() + '/RawInteractions/faa_data/*.csv')
+            raw_file = [string for string in excel_files if user_name in string][0]
 
-                    # Keep track of best combination of hyperparameters
-                    if accuracies > max_accu:
-                        max_accu = accuracies
-                        best_learning_rate = learning_rate
-                        best_gamma = gamma
-                        best_agent = agent
-                        best_model = model
+            accu = []
+            env = environment5.environment5()
+            # Loop over all threshold values
+            for thres in threshold_h:
+                max_accu = -1
+                best_agent = None
+                best_model = None
 
-            # Print training results
-            # print("#TRAINING: User: {}, Threshold: {:.1f}, Accuracy: {:.2f}, LR: {}, Discount: {}".format(user_name, thres, max_accu, best_learning_rate, best_gamma))
+                env.process_data('faa', raw_file, feedback_file, thres, 'Actor-Critic')
+                # Loop over all combinations of hyperparameters
+                for learning_rate in learning_rates:
+                    for gamma in gammas:
+                        agent = Agent(env, learning_rate, gamma)
+                        model, accuracies = agent.train()
 
-            # Test the best agent and store results in DataFrame
-            test_accuracy = best_agent.test(best_model)
-            accu.append(test_accuracy)
-            print("User :{}, Threshold : {:.1f}, Accuracy: {}".format(user_name, thres, test_accuracy))
-        print(user_name, accu)
-        final_accu = np.add(final_accu, accu)
-    final_accu /= len(user_list)
-    print("Actor-Critic: ")
-    print(np.round(final_accu, decimals=2))
+                        # Keep track of best combination of hyperparameters
+                        if accuracies > max_accu:
+                            max_accu = accuracies
+                            best_agent = agent
+                            best_model = model
 
+                #running them 5 times and taking the average test accuracy to reduce fluctuations
+                test_accs = []
+                for _ in range(5):
+                    test_agent = best_agent
+                    test_model = best_model
+                    temp_accuracy = test_agent.test(test_model)
+                    test_accs.append(temp_accuracy)
+                test_accuracy = np.mean(test_accs)
+                accu.append(test_accuracy)
 
-def get_user_name(raw_fname):
-    user = Path(raw_fname).stem.split('-')[0]
-    return user
+            print(user_name, accu)
+            final_accu = np.add(final_accu, accu)
+        final_accu /= len(user_list)
+        result_queue.put(final_accu)
+
+    def get_user_name(self, raw_fname):
+        user = Path(raw_fname).stem.split('-')[0]
+        return user
 
 
 if __name__ == '__main__':
     env = environment5.environment5()
-    user_list_faa = env.user_list_faa
-    run_experiment(user_list_faa, 'Actor_Critic', 'sampled_hyper_params.json') #user_list_faa contains names of the feedback files from where we parse user_name
+    user_list = env.user_list_faa
+    # run_experiment(user_list, 'Actor_Critic', 'sampled_hyper_params.json') #user_list_faa contains names of the feedback files from where we parse user_name
+    obj2 = run_ac()
+
+    result_queue = multiprocessing.Queue()
+    p1 = multiprocessing.Process(target=obj2.run_experiment, args=(user_list[:2], 'Actor_Critic', 'sampled_hyper_params.json', result_queue,))
+    p2 = multiprocessing.Process(target=obj2.run_experiment, args=(user_list[2:4], 'Actor_Critic', 'sampled_hyper_params.json', result_queue,))
+    p3 = multiprocessing.Process(target=obj2.run_experiment, args=(user_list[4:6], 'Actor_Critic', 'sampled_hyper_params.json', result_queue,))
+    p4 = multiprocessing.Process(target=obj2.run_experiment, args=(user_list[6:], 'Actor_Critic', 'sampled_hyper_params.json', result_queue,))
+    
+    p1.start()
+    p2.start()
+    p3.start()
+    p4.start()
+    final_result = np.zeros(9, dtype = float)
+    p1.join()
+    # temp = result_queue.get()
+    final_result = np.add(final_result, result_queue.get())
+    p2.join()
+    # print(result_queue.get())
+    final_result = np.add(final_result, result_queue.get())
+    p3.join()
+    # print(result_queue.get())
+    final_result = np.add(final_result, result_queue.get())
+    p4.join()
+    # print(result_queue.get())
+    final_result = np.add(final_result, result_queue.get())
+    final_result /= 4
+    print("Actor-Critic ", ", ".join(f"{x:.2f}" for x in final_result))
