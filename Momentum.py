@@ -10,46 +10,34 @@ import os
 from pathlib import Path
 
 eps=1e-35
-class Greedy:
+class Momentum:
     def __init__(self):
-        """Initializes the Greedy model."""
-        self.freq = defaultdict(lambda: defaultdict(float))
-        self.reward = defaultdict(lambda: defaultdict(float))
+        """Initializes the Momentum model."""
+        self.last_action = defaultdict()
 
-    def GreedyDriver(self, env, thres):
+    def MomentumDriver(self, env, thres):
         length = len(env.mem_action)
         threshold = int(length * thres)
         for i in range(threshold):
-            self.freq[env.mem_states[i]][env.mem_action[i]] += 1
-            self.reward[env.mem_states[i]][env.mem_action[i]] += env.mem_reward[i]+eps
+            self.last_action[env.mem_states[i]] = env.mem_action[i]
 
-        # Normalizing
-        for states in self.reward:
-            sum = 0
-            for actions in self.reward[states]:
-                sum += self.reward[states][actions]
-            for actions in self.reward[states]:
-                self.reward[states][actions] = self.reward[states][actions] / sum
         # Checking accuracy on the remaining data:
         accuracy = 0
         denom = 0
         for i in range(threshold, length):
             denom += 1
-            try: #Finding the most rewarding action in the current state
-                # _max = max(self.reward[env.mem_states[i]], key=self.reward[env.mem_states[i]].get)
-                _max = random.choices(list(self.freq[env.mem_states[i]].keys()), weights=list(self.freq[env.mem_states[i]].values()), k=1)[0]
-            # except ValueError: #Randomly picking an action if it was used previously in current state 
-            except IndexError:
-                _max= random.choice([0, 1, 2, 3])
+            try: #Finding the last action in the current state
+                candidate = self.last_action[env.mem_states[i]]
+            except KeyError: #Randomly picking an action if the current state is new 
+                candidate = random.choice([0, 1, 2, 3])
             
-            if _max == env.mem_action[i]:
-            # if random.choice([0, 1, 2, 3]) == env.mem_action[i]: # this one is for Random Strategy
+            if candidate == env.mem_action[i]:
                  accuracy += 1
 
         accuracy /= denom
         return accuracy
 
-class run_Greedy:
+class run_Momentum:
     def __inti__(self):
         pass
 
@@ -67,8 +55,7 @@ class run_Greedy:
         final_accu = np.zeros(9, dtype=float)
         for feedback_file in user_list:
             user_name = self.get_user_name(feedback_file)
-            excel_files = glob.glob(os.getcwd() + '/RawInteractions/faa_data/*.csv')
-            # excel_files = glob.glob(os.getcwd() + '/RawInteractions/brightkite_data/*.csv')
+            excel_files = glob.glob(os.getcwd() + '/RawInteractions/brightkite_data/*.csv')
             raw_file = [string for string in excel_files if user_name in string][0]
 
             accu = []
@@ -77,8 +64,8 @@ class run_Greedy:
                 for _ in range(5):
                     env.process_data('faa', raw_file, feedback_file, thres, 'Greedy')
                     # print(env.mem_states)
-                    obj = Greedy()
-                    avg_accu.append(obj.GreedyDriver(env, thres))
+                    obj = Momentum()
+                    avg_accu.append(obj.MomentumDriver(env, thres))
                     env.reset(True, False)
                 accu.append(np.mean(avg_accu))
             final_accu = np.add(final_accu, accu)
@@ -89,10 +76,10 @@ class run_Greedy:
 
 if __name__ == "__main__":
     env = environment5.environment5()
-    user_list = env.user_list_faa
-    # user_list = env.user_list_brightkite
+    # user_list = env.user_list_faa
+    user_list = env.user_list_brightkite
     # run_experiment(user_list, 'Actor_Critic', 'sampled_hyper_params.json') #user_list_faa contains names of the feedback files from where we parse user_name
-    obj2 = run_Greedy()
+    obj2 = run_Momentum()
 
     result_queue = multiprocessing.Queue()
     p1 = multiprocessing.Process(target=obj2.run_experiment, args=(user_list[:2], 'sampled_hyper_params.json', result_queue,))
@@ -118,4 +105,4 @@ if __name__ == "__main__":
     # print(result_queue.get())
     final_result = np.add(final_result, result_queue.get())
     final_result /= 4
-    print("Greedy ", ", ".join(f"{x:.2f}" for x in final_result))
+    print("Momentum ", ", ".join(f"{x:.2f}" for x in final_result))

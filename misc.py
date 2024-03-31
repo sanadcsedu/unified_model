@@ -60,9 +60,13 @@ class misc:
                 
                 user_name = self.get_user_name(feedback_file)
                 excel_files = glob.glob(os.getcwd() + '/RawInteractions/faa_data/*.csv')
+                # excel_files = glob.glob(os.getcwd() + '/RawInteractions/brightkite_data/*.csv')
+                
                 raw_file = [string for string in excel_files if user_name in string][0]
 
+                # env.process_data('brightkite', raw_file, feedback_file, thres, algorithm) 
                 env.process_data('faa', raw_file, feedback_file, thres, algorithm) 
+                
                 for eps in self.epsilon_h:
                     for alp in self.alpha_h:
                         for dis in self.discount_h:
@@ -73,6 +77,7 @@ class misc:
                                 else:
                                     obj = SARSA.TD_SARSA()
                                     Q, train_accuracy = obj.sarsa(env, epoch, dis, alp, eps)
+                                    # print(train_accuracy)
                                 if max_accu_thres < train_accuracy:
                                     max_accu_thres = train_accuracy
                                     best_eps = eps
@@ -83,7 +88,7 @@ class misc:
                                 max_accu_thres = max(max_accu_thres, train_accuracy)
                 test_accs = []
                 test_env = env
-                for _ in range(5):
+                for _ in range(3):
                     test_model = best_obj
                     test_q, test_discount, test_alpha, test_eps = best_q, best_discount, best_alpha, best_eps
                     temp_accuracy = test_model.test(env, test_q, test_discount, test_alpha, test_eps)
@@ -94,7 +99,7 @@ class misc:
                 accu.append(test_accuracy)
                 env.reset(True, False)
             # print(user[0], accu)
-            # print(user[0], ", ".join(f"{x:.2f}" for x in accu))
+            print(user_name, ", ".join(f"{x:.2f}" for x in accu))
             final_accu = np.add(final_accu, accu)
         final_accu /= len(users_hyper)
         # print(algorithm)

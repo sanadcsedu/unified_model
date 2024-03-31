@@ -32,10 +32,14 @@ class Qlearning:
         """
 
         def policy_fnc(state):
-            A = np.ones(nA, dtype=float) * epsilon / nA
-            best_action = np.argmax(Q[state])
-            A[best_action] += (1.0 - epsilon)
-            return A
+            coin = random.random()
+            if coin < epsilon:
+                best_action = random.randint(0, 3)
+                print("random")
+            else:
+                best_action = np.argmax(Q[state])
+                print("best")
+            return best_action
 
         return policy_fnc
 
@@ -66,21 +70,28 @@ class Qlearning:
 
             # Reset the environment and pick the first state
             state = env.reset(all = False, test = False)
+            # action_probs = policy(state)
+            # action = np.random.choice(np.arange(len(action_probs)), p=action_probs)
+            action = policy(state)
+
             training_accuracy=[]
             for t in itertools.count():
                 # Take a step
-                action_probs = policy(state)
-                action = np.random.choice(np.arange(len(action_probs)), p=action_probs)
+                print(Q[state])
                 next_state, reward, done, info = env.step(state, action, False)
 
                 training_accuracy.append(info)
 
                 # TD Update
                 best_next_action = np.argmax(Q[next_state])
-                td_target = reward + discount_factor * Q[next_state][best_next_action]
+                print("Debug",  best_next_action)
+                td_target = reward*info + discount_factor * Q[next_state][best_next_action]
                 td_delta = td_target - Q[state][action]
-                Q[state][action] += alpha * (td_delta + info)
+                # Q[state][action] += alpha * (td_delta + info)
+                Q[state][action] += alpha * td_delta
+
                 state = next_state
+                action = best_next_action
                 if done:
                     break
 
@@ -98,23 +109,26 @@ class Qlearning:
             model_actions = []
             
             policy = self.epsilon_greedy_policy(Q, epsilon, len(env.action_space))
+            # action_probs = policy(state)
+            # action = np.random.choice(np.arange(len(action_probs)), p=action_probs)
+            action = policy(state)
 
             for t in itertools.count():
             
-                action_probs = policy(state)
-                action = np.random.choice(np.arange(len(action_probs)), p=action_probs)
-                model_actions.append(action)
                 next_state, reward, done, prediction  = env.step(state, action, True)
             
                 stats.append(prediction)
             
                 # Turning off the Q-Learning update when testing, the prediction is based on the Learned model from first x% interactions
                 best_next_action = np.argmax(Q[next_state])
+                print("Debug",  best_next_action)
                 td_target = reward + discount_factor * Q[next_state][best_next_action]
                 td_delta = td_target - Q[state][action]
-                Q[state][action] += alpha * (td_delta + prediction)
+                # Q[state][action] += alpha * (td_delta + prediction)
+                Q[state][action] += alpha * td_delta
 
                 state = next_state
+                action = best_next_action
                 if done:
                     break
 
@@ -123,6 +137,7 @@ class Qlearning:
 if __name__ == "__main__":
     env = environment5.environment5()
     user_list = env.user_list_faa
+    # user_list = env.user_list_brightkite
     obj2 = misc.misc(len(user_list))
 
     result_queue = multiprocessing.Queue()
@@ -150,3 +165,5 @@ if __name__ == "__main__":
     final_result = np.add(final_result, result_queue.get())
     final_result /= 4
     print("Q-Learning ", ", ".join(f"{x:.2f}" for x in final_result))
+
+    # faa: 0.58, 0.53, 0.57, 0.61, 0.63, 0.63, 0.68, 0.66, 0.68
