@@ -1,0 +1,376 @@
+user u4
+Threshold: 0.1
+action: 0, count: 98, accuracy:0.891156462585034
+action: 1, count: 40, accuracy:0.03333333333333333
+action: 2, count: 24, accuracy:0.9444444444444445
+action: 3, count: 81, accuracy:0.3497942386831276
+Threshold: 0.2
+action: 0, count: 94, accuracy:0.9787234042553191
+action: 1, count: 40, accuracy:0.0
+action: 2, count: 1, accuracy:1.0
+action: 3, count: 81, accuracy:0.0
+Threshold: 0.3
+action: 0, count: 86, accuracy:0.9263565891472868
+action: 1, count: 36, accuracy:0.0
+2 Not Present
+action: 3, count: 67, accuracy:0.5870646766169155
+Threshold: 0.4
+action: 0, count: 78, accuracy:0.8760683760683761
+action: 1, count: 32, accuracy:0.03125
+2 Not Present
+action: 3, count: 52, accuracy:0.1987179487179487
+Threshold: 0.5
+action: 0, count: 64, accuracy:0.9375
+action: 1, count: 26, accuracy:0.06410256410256411
+2 Not Present
+action: 3, count: 44, accuracy:0.6818181818181818
+Threshold: 0.6
+action: 0, count: 57, accuracy:0.9473684210526315
+action: 1, count: 19, accuracy:0.0
+2 Not Present
+action: 3, count: 31, accuracy:0.6666666666666666
+Threshold: 0.7
+action: 0, count: 40, accuracy:0.8666666666666667
+action: 1, count: 10, accuracy:0.20000000000000004
+2 Not Present
+action: 3, count: 30, accuracy:0.6444444444444444
+Threshold: 0.8
+action: 0, count: 31, accuracy:1.0
+action: 1, count: 8, accuracy:0.0
+2 Not Present
+action: 3, count: 14, accuracy:0.2857142857142857
+Threshold: 0.9
+action: 0, count: 18, accuracy:0.9814814814814815
+action: 1, count: 2, accuracy:0.0
+2 Not Present
+action: 3, count: 6, accuracy:0.0
+u4, 0.57, 0.43, 0.63, 0.49, 0.68, 0.70, 0.70, 0.66, 0.68
+user u3
+Threshold: 0.1
+action: 0, count: 6, accuracy:0.0
+1 Not Present
+action: 2, count: 47, accuracy:0.5886524822695035
+action: 3, count: 100, accuracy:0.27666666666666667
+Threshold: 0.2
+action: 0, count: 6, accuracy:0.5
+1 Not Present
+action: 2, count: 47, accuracy:0.7304964539007092
+action: 3, count: 83, accuracy:0.4819277108433735
+Threshold: 0.3
+action: 0, count: 6, accuracy:0.0
+1 Not Present
+action: 2, count: 47, accuracy:0.20567375886524822
+action: 3, count: 66, accuracy:0.3737373737373737
+Threshold: 0.4
+action: 0, count: 6, accuracy:0.0
+1 Not Present
+action: 2, count: 47, accuracy:0.6312056737588653
+action: 3, count: 49, accuracy:0.46258503401360546
+Threshold: 0.5
+action: 0, count: 6, accuracy:0.5555555555555555
+1 Not Present
+action: 2, count: 47, accuracy:0.014184397163120567
+action: 3, count: 31, accuracy:0.24731182795698925
+Threshold: 0.6
+0 Not Present
+1 Not Present
+action: 2, count: 47, accuracy:0.2624113475177305
+action: 3, count: 20, accuracy:0.5833333333333334
+Threshold: 0.7
+0 Not Present
+1 Not Present
+action: 2, count: 47, accuracy:0.5035460992907802
+action: 3, count: 3, accuracy:0.3333333333333333
+Threshold: 0.8
+0 Not Present
+1 Not Present
+action: 2, count: 32, accuracy:0.7083333333333334
+action: 3, count: 1, accuracy:0.0
+Threshold: 0.9
+0 Not Present
+1 Not Present
+action: 2, count: 16, accuracy:0.875
+3 Not Present
+u3, 0.36, 0.57, 0.29, 0.51, 0.14, 0.36, 0.49, 0.69, 0.88
+user u6
+Threshold: 0.1
+action: 0, count: 22, accuracy:0.06060606060606061
+action: 1, count: 4, accuracy:0.0
+action: 2, count: 174, accuracy:0.842911877394636
+action: 3, count: 50, accuracy:0.49333333333333335
+Threshold: 0.2
+action: 0, count: 22, accuracy:0.15151515151515152
+action: 1, count: 4, accuracy:0.0
+action: 2, count: 147, accuracy:0.8185941043083901
+action: 3, count: 49, accuracy:0.4489795918367347
+Threshold: 0.3
+action: 0, count: 22, accuracy:0.06060606060606061
+action: 1, count: 4, accuracy:0.0
+action: 2, count: 139, accuracy:0.8297362110311751
+action: 3, count: 29, accuracy:0.4252873563218391
+Threshold: 0.4
+action: 0, count: 16, accuracy:0.10416666666666667
+action: 1, count: 3, accuracy:0.1111111111111111
+action: 2, count: 118, accuracy:0.827683615819209
+action: 3, count: 29, accuracy:0.43678160919540227
+Threshold: 0.5
+action: 0, count: 11, accuracy:0.0
+action: 1, count: 2, accuracy:0.0
+action: 2, count: 100, accuracy:0.8700000000000001
+action: 3, count: 25, accuracy:0.49333333333333335
+Threshold: 0.6
+action: 0, count: 11, accuracy:0.06060606060606061
+action: 1, count: 2, accuracy:0.0
+action: 2, count: 72, accuracy:0.6851851851851851
+action: 3, count: 25, accuracy:0.5333333333333333
+Threshold: 0.7
+action: 0, count: 11, accuracy:0.0
+action: 1, count: 2, accuracy:0.0
+action: 2, count: 47, accuracy:0.8368794326241135
+action: 3, count: 22, accuracy:0.5303030303030303
+Threshold: 0.8
+action: 0, count: 11, accuracy:0.8787878787878788
+action: 1, count: 2, accuracy:0.0
+action: 2, count: 19, accuracy:0.42105263157894735
+action: 3, count: 22, accuracy:0.0
+Threshold: 0.9
+action: 0, count: 7, accuracy:0.19047619047619047
+action: 1, count: 1, accuracy:0.0
+2 Not Present
+action: 3, count: 18, accuracy:0.9259259259259259
+u6, 0.69, 0.66, 0.66, 0.68, 0.72, 0.58, 0.62, 0.33, 0.69
+user u2
+Threshold: 0.1
+action: 0, count: 40, accuracy:0.9916666666666667
+action: 1, count: 10, accuracy:0.0
+action: 2, count: 156, accuracy:0.7564102564102564
+action: 3, count: 70, accuracy:0.0
+Threshold: 0.2
+action: 0, count: 40, accuracy:1.0
+action: 1, count: 10, accuracy:0.0
+action: 2, count: 125, accuracy:0.592
+action: 3, count: 70, accuracy:0.0047619047619047615
+Threshold: 0.3
+action: 0, count: 40, accuracy:1.0
+action: 1, count: 10, accuracy:0.03333333333333333
+action: 2, count: 94, accuracy:0.45390070921985815
+action: 3, count: 70, accuracy:0.0047619047619047615
+Threshold: 0.4
+action: 0, count: 40, accuracy:0.9666666666666667
+action: 1, count: 10, accuracy:0.03333333333333333
+action: 2, count: 63, accuracy:0.7777777777777777
+action: 3, count: 70, accuracy:0.0047619047619047615
+Threshold: 0.5
+action: 0, count: 40, accuracy:0.9666666666666667
+action: 1, count: 10, accuracy:0.0
+action: 2, count: 32, accuracy:0.8229166666666666
+action: 3, count: 70, accuracy:0.45714285714285713
+Threshold: 0.6
+action: 0, count: 40, accuracy:0.9583333333333334
+action: 1, count: 10, accuracy:0.03333333333333333
+action: 2, count: 2, accuracy:1.0
+action: 3, count: 70, accuracy:0.0047619047619047615
+Threshold: 0.7
+action: 0, count: 23, accuracy:1.0
+action: 1, count: 7, accuracy:0.047619047619047616
+2 Not Present
+action: 3, count: 61, accuracy:0.01092896174863388
+Threshold: 0.8
+action: 0, count: 9, accuracy:0.8888888888888888
+action: 1, count: 4, accuracy:0.0
+2 Not Present
+action: 3, count: 47, accuracy:0.028368794326241134
+Threshold: 0.9
+action: 0, count: 2, accuracy:0.3333333333333333
+action: 1, count: 4, accuracy:0.9166666666666666
+2 Not Present
+action: 3, count: 23, accuracy:0.8695652173913043
+u2, 0.57, 0.47, 0.39, 0.48, 0.64, 0.34, 0.26, 0.16, 0.84
+user u7
+Threshold: 0.1
+action: 0, count: 22, accuracy:0.9393939393939394
+1 Not Present
+action: 2, count: 145, accuracy:0.46896551724137936
+action: 3, count: 92, accuracy:0.22826086956521738
+Threshold: 0.2
+action: 0, count: 22, accuracy:0.9696969696969697
+1 Not Present
+action: 2, count: 116, accuracy:0.7155172413793104
+action: 3, count: 92, accuracy:0.19927536231884058
+Threshold: 0.3
+action: 0, count: 22, accuracy:0.9090909090909092
+1 Not Present
+action: 2, count: 87, accuracy:0.9157088122605365
+action: 3, count: 92, accuracy:0.11956521739130437
+Threshold: 0.4
+action: 0, count: 22, accuracy:0.8939393939393939
+1 Not Present
+action: 2, count: 58, accuracy:0.8678160919540231
+action: 3, count: 92, accuracy:0.34057971014492755
+Threshold: 0.5
+action: 0, count: 22, accuracy:0.9393939393939394
+1 Not Present
+action: 2, count: 29, accuracy:0.9425287356321839
+action: 3, count: 92, accuracy:0.010869565217391304
+Threshold: 0.6
+action: 0, count: 15, accuracy:0.9777777777777779
+1 Not Present
+action: 2, count: 8, accuracy:0.8333333333333334
+action: 3, count: 91, accuracy:0.06227106227106227
+Threshold: 0.7
+action: 0, count: 10, accuracy:0.3
+1 Not Present
+action: 2, count: 8, accuracy:0.875
+action: 3, count: 67, accuracy:0.6169154228855721
+Threshold: 0.8
+action: 0, count: 7, accuracy:0.38095238095238093
+1 Not Present
+action: 2, count: 8, accuracy:0.5833333333333334
+action: 3, count: 41, accuracy:0.4390243902439024
+Threshold: 0.9
+action: 0, count: 7, accuracy:0.38095238095238093
+1 Not Present
+action: 2, count: 1, accuracy:0.0
+action: 3, count: 19, accuracy:0.24561403508771928
+u7, 0.42, 0.53, 0.55, 0.59, 0.34, 0.24, 0.60, 0.45, 0.27
+user u5
+Threshold: 0.1
+action: 0, count: 9, accuracy:0.25925925925925924
+action: 1, count: 11, accuracy:0.0
+action: 2, count: 383, accuracy:0.7806788511749346
+action: 3, count: 52, accuracy:0.6282051282051282
+Threshold: 0.2
+action: 0, count: 9, accuracy:0.9259259259259259
+action: 1, count: 11, accuracy:0.06060606060606061
+action: 2, count: 332, accuracy:0.7891566265060241
+action: 3, count: 52, accuracy:0.006410256410256411
+Threshold: 0.3
+action: 0, count: 8, accuracy:0.08333333333333333
+action: 1, count: 11, accuracy:0.0
+action: 2, count: 288, accuracy:0.6215277777777778
+action: 3, count: 46, accuracy:0.7028985507246377
+Threshold: 0.4
+action: 0, count: 8, accuracy:0.0
+action: 1, count: 11, accuracy:0.030303030303030304
+action: 2, count: 259, accuracy:0.8095238095238094
+action: 3, count: 25, accuracy:0.8666666666666667
+Threshold: 0.5
+action: 0, count: 8, accuracy:0.08333333333333333
+action: 1, count: 11, accuracy:0.0
+action: 2, count: 208, accuracy:0.7612179487179486
+action: 3, count: 25, accuracy:0.7733333333333334
+Threshold: 0.6
+action: 0, count: 8, accuracy:0.125
+action: 1, count: 11, accuracy:0.0
+action: 2, count: 157, accuracy:0.7537154989384289
+action: 3, count: 25, accuracy:0.7866666666666666
+Threshold: 0.7
+action: 0, count: 8, accuracy:0.0
+action: 1, count: 11, accuracy:0.0
+action: 2, count: 107, accuracy:0.9252336448598131
+action: 3, count: 25, accuracy:0.84
+Threshold: 0.8
+action: 0, count: 3, accuracy:0.4444444444444444
+action: 1, count: 3, accuracy:0.0
+action: 2, count: 90, accuracy:0.9592592592592593
+action: 3, count: 4, accuracy:0.25
+Threshold: 0.9
+action: 0, count: 3, accuracy:0.0
+action: 1, count: 3, accuracy:0.1111111111111111
+action: 2, count: 42, accuracy:0.9841269841269842
+action: 3, count: 1, accuracy:0.0
+u5, 0.73, 0.67, 0.60, 0.76, 0.71, 0.69, 0.79, 0.89, 0.85
+user u1
+Threshold: 0.1
+action: 0, count: 231, accuracy:0.7113997113997114
+action: 1, count: 29, accuracy:0.19540229885057472
+action: 2, count: 77, accuracy:0.5844155844155844
+action: 3, count: 147, accuracy:0.43764172335600904
+Threshold: 0.2
+action: 0, count: 225, accuracy:0.6962962962962963
+action: 1, count: 24, accuracy:0.23611111111111113
+action: 2, count: 64, accuracy:0.7552083333333334
+action: 3, count: 117, accuracy:0.36467236467236464
+Threshold: 0.3
+action: 0, count: 197, accuracy:0.6818950930626059
+action: 1, count: 19, accuracy:0.12280701754385964
+action: 2, count: 63, accuracy:0.7777777777777777
+action: 3, count: 97, accuracy:0.3883161512027491
+Threshold: 0.4
+action: 0, count: 158, accuracy:0.679324894514768
+action: 1, count: 16, accuracy:0.041666666666666664
+action: 2, count: 62, accuracy:0.7365591397849461
+action: 3, count: 86, accuracy:0.5155038759689923
+Threshold: 0.5
+action: 0, count: 136, accuracy:0.7352941176470589
+action: 1, count: 12, accuracy:0.0
+action: 2, count: 62, accuracy:0.521505376344086
+action: 3, count: 58, accuracy:0.367816091954023
+Threshold: 0.6
+action: 0, count: 109, accuracy:0.7247706422018348
+action: 1, count: 12, accuracy:0.1111111111111111
+action: 2, count: 47, accuracy:0.8936170212765958
+action: 3, count: 46, accuracy:0.23913043478260873
+Threshold: 0.7
+action: 0, count: 81, accuracy:0.7695473251028807
+action: 1, count: 7, accuracy:0.09523809523809523
+action: 2, count: 41, accuracy:0.9105691056910569
+action: 3, count: 31, accuracy:0.15053763440860216
+Threshold: 0.8
+action: 0, count: 46, accuracy:0.7971014492753623
+action: 1, count: 5, accuracy:0.3333333333333333
+action: 2, count: 41, accuracy:0.39837398373983746
+action: 3, count: 14, accuracy:0.2380952380952381
+Threshold: 0.9
+action: 0, count: 12, accuracy:0.9166666666666666
+1 Not Present
+action: 2, count: 39, accuracy:0.4444444444444444
+action: 3, count: 1, accuracy:0.0
+u1, 0.58, 0.59, 0.59, 0.61, 0.57, 0.62, 0.66, 0.55, 0.54
+user u8
+Threshold: 0.1
+action: 0, count: 33, accuracy:0.5555555555555556
+action: 1, count: 3, accuracy:0.1111111111111111
+action: 2, count: 19, accuracy:0.21052631578947367
+action: 3, count: 368, accuracy:0.5471014492753623
+Threshold: 0.2
+action: 0, count: 33, accuracy:0.787878787878788
+action: 1, count: 3, accuracy:0.0
+action: 2, count: 18, accuracy:0.24074074074074073
+action: 3, count: 322, accuracy:0.6842650103519669
+Threshold: 0.3
+action: 0, count: 33, accuracy:0.6464646464646465
+action: 1, count: 3, accuracy:0.0
+action: 2, count: 18, accuracy:0.35185185185185186
+action: 3, count: 275, accuracy:0.7309090909090908
+Threshold: 0.4
+action: 0, count: 33, accuracy:0.9090909090909092
+action: 1, count: 3, accuracy:0.0
+action: 2, count: 18, accuracy:0.2222222222222222
+action: 3, count: 228, accuracy:0.489766081871345
+Threshold: 0.5
+action: 0, count: 33, accuracy:0.6767676767676768
+action: 1, count: 3, accuracy:0.0
+action: 2, count: 18, accuracy:0.07407407407407407
+action: 3, count: 180, accuracy:0.7222222222222222
+Threshold: 0.6
+action: 0, count: 33, accuracy:0.9494949494949495
+action: 1, count: 3, accuracy:0.0
+action: 2, count: 18, accuracy:0.018518518518518517
+action: 3, count: 133, accuracy:0.7293233082706768
+Threshold: 0.7
+action: 0, count: 33, accuracy:0.9494949494949495
+action: 1, count: 3, accuracy:0.0
+action: 2, count: 14, accuracy:0.2857142857142857
+action: 3, count: 90, accuracy:0.6
+Threshold: 0.8
+action: 0, count: 33, accuracy:0.9696969696969697
+action: 1, count: 3, accuracy:0.0
+action: 2, count: 14, accuracy:0.2380952380952381
+action: 3, count: 43, accuracy:0.23255813953488372
+Threshold: 0.9
+action: 0, count: 17, accuracy:1.0
+action: 1, count: 2, accuracy:0.0
+2 Not Present
+action: 3, count: 27, accuracy:0.0
+u8, 0.53, 0.67, 0.70, 0.52, 0.66, 0.69, 0.64, 0.49, 0.37

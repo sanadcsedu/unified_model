@@ -126,4 +126,4 @@ class environment5:
 
         self.take_step_action(test)
 
-        return next_state, cur_reward, self.done, prediction
+        return next_state, cur_reward, self.done, prediction, cur_action
