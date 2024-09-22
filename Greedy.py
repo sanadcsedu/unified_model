@@ -24,12 +24,12 @@ class Greedy:
             self.reward[env.mem_states[i]][env.mem_action[i]] += env.mem_reward[i]+eps
 
         # Normalizing
-        for states in self.reward:
-            sum = 0
-            for actions in self.reward[states]:
-                sum += self.reward[states][actions]
-            for actions in self.reward[states]:
-                self.reward[states][actions] = self.reward[states][actions] / sum
+        # for states in self.reward:
+        #     sum = 0
+        #     for actions in self.reward[states]:
+        #         sum += self.reward[states][actions]
+        #     for actions in self.reward[states]:
+        #         self.reward[states][actions] = self.reward[states][actions] / sum
         
         # Checking accuracy on the remaining data:
         accuracy = 0
@@ -49,6 +49,8 @@ class Greedy:
                 insight[env.mem_action[i]].append(1)
             else:
                 insight[env.mem_action[i]].append(0)
+            
+            # self.reward[env.mem_states[i]][_max] += env.mem_reward[i]
 
         accuracy /= denom
         self.reward.clear()
@@ -78,8 +80,8 @@ class run_Greedy:
         
         for feedback_file in user_list:
             user_name = self.get_user_name(feedback_file)
-            # excel_files = glob.glob(os.getcwd() + '/RawInteractions/faa_data/*.csv')
-            excel_files = glob.glob(os.getcwd() + '/RawInteractions/brightkite_data/*.csv')
+            excel_files = glob.glob(os.getcwd() + '/RawInteractions/faa_data/*.csv')
+            # excel_files = glob.glob(os.getcwd() + '/RawInteractions/brightkite_data/*.csv')
             raw_file = [string for string in excel_files if user_name in string][0]
 
             accu = []
@@ -91,8 +93,8 @@ class run_Greedy:
                 split_accs = [[] for _ in range(4)]
 
                 for _ in range(5):
-                    # env.process_data('faa', raw_file, feedback_file, thres, 'Greedy')
-                    env.process_data('brightkite', raw_file, feedback_file, thres, 'Greedy') 
+                    env.process_data('faa', raw_file, feedback_file, thres, 'Greedy')
+                    # env.process_data('brightkite', raw_file, feedback_file, thres, 'Greedy') 
                     obj = Greedy()
                     temp_accuracy, gp = obj.GreedyDriver(env, thres)
                     avg_accu.append(temp_accuracy)
@@ -131,8 +133,8 @@ class run_Greedy:
 if __name__ == "__main__":
     final_output = []
     env = environment5.environment5()
-    # user_list = env.user_list_faa
-    user_list = env.user_list_brightkite
+    user_list = env.user_list_faa
+    # user_list = env.user_list_brightkite
     obj2 = run_Greedy()
 
     result_queue = multiprocessing.Queue()
@@ -192,44 +194,42 @@ if __name__ == "__main__":
         print("Action ", ii, ", ".join(f"{x:.2f}" for x in split_final_cnt[ii]))
 
 # FAA 
-# u1 0.54, 0.53, 0.55, 0.57, 0.58, 0.52, 0.49, 0.59, 0.93
-# u6 0.81, 0.79, 0.79, 0.79, 0.80, 0.79, 0.81, 0.67, 0.71
-# u7 0.73, 0.73, 0.72, 0.71, 0.66, 0.57, 0.65, 0.56, 0.35
-# u4 0.60, 0.57, 0.54, 0.51, 0.67, 0.70, 0.71, 0.64, 0.64
-# u8 0.56, 0.54, 0.64, 0.60, 0.76, 0.71, 0.66, 0.52, 0.40
-# u5 0.89, 0.88, 0.90, 0.89, 0.88, 0.85, 0.84, 0.91, 0.86
-# u3 0.64, 0.65, 0.60, 0.54, 0.45, 0.41, 0.25, 0.03, 0.00
-# u2 0.63, 0.60, 0.56, 0.50, 0.38, 0.29, 0.17, 0.13, 0.03
+# u1 0.47, 0.39, 0.44, 0.49, 0.47, 0.42, 0.35, 0.31, 0.93
+# u6 0.75, 0.74, 0.75, 0.73, 0.79, 0.68, 0.61, 0.53, 0.71
+# u7 0.37, 0.43, 0.56, 0.51, 0.35, 0.24, 0.51, 0.38, 0.34
+# u4 0.39, 0.41, 0.50, 0.51, 0.68, 0.70, 0.72, 0.64, 0.64
+# u8 0.47, 0.42, 0.62, 0.57, 0.72, 0.63, 0.67, 0.48, 0.36
+# u5 0.48, 0.36, 0.58, 0.58, 0.56, 0.54, 0.83, 0.91, 0.86
+# u3 0.25, 0.48, 0.33, 0.47, 0.37, 0.32, 0.15, 0.03, 0.00
+# u2 0.53, 0.49, 0.32, 0.37, 0.29, 0.16, 0.17, 0.13, 0.03
 
-# Greedy  0.68, 0.66, 0.66, 0.64, 0.65, 0.60, 0.57, 0.51, 0.49
+# Greedy  0.46, 0.46, 0.51, 0.53, 0.53, 0.46, 0.50, 0.43, 0.49
 
-# Action  0 0.40, 0.39, 0.43, 0.41, 0.34, 0.44, 0.37, 0.50, 0.45
-# Action  1 0.02, 0.06, 0.08, 0.08, 0.08, 0.06, 0.01, 0.00, 0.00
-# Action  2 0.81, 0.82, 0.61, 0.60, 0.59, 0.52, 0.41, 0.38, 0.25
-# Action  3 0.61, 0.61, 0.62, 0.60, 0.73, 0.67, 0.74, 0.56, 0.27
-
+# Action  0 0.24, 0.38, 0.31, 0.31, 0.32, 0.34, 0.33, 0.42, 0.46
+# Action  1 0.14, 0.11, 0.03, 0.06, 0.02, 0.03, 0.02, 0.00, 0.00
+# Action  2 0.69, 0.68, 0.49, 0.52, 0.53, 0.45, 0.37, 0.36, 0.25
+# Action  3 0.36, 0.37, 0.52, 0.55, 0.62, 0.59, 0.68, 0.49, 0.25
 # Action  0 57.75, 56.50, 51.88, 45.25, 40.12, 34.25, 25.88, 17.62, 8.38
 # Action  1 12.12, 11.50, 10.38, 9.38, 8.00, 7.12, 5.00, 3.12, 1.50
 # Action  2 128.62, 106.75, 92.50, 78.62, 62.50, 44.38, 33.50, 26.00, 12.75
 # Action  3 121.38, 109.62, 94.12, 80.25, 67.00, 56.50, 42.50, 24.62, 13.25
 
 # Brightkite
-# u14 0.40, 0.36, 0.31, 0.57, 0.62, 0.77, 0.77, 0.79, 1.00
-# u13 0.79, 0.80, 0.81, 0.79, 0.74, 0.81, 0.87, 0.84, 0.88
-# u9 0.67, 0.73, 0.76, 0.83, 0.92, 0.92, 0.90, 0.91, 0.84
-# u11 0.81, 0.81, 0.81, 0.81, 0.78, 0.80, 0.81, 0.71, 0.44
-# u15 0.65, 0.65, 0.68, 0.69, 0.67, 0.71, 0.65, 0.65, 0.79
-# u10 0.76, 0.80, 0.85, 0.77, 0.80, 0.81, 0.86, 0.84, 0.64
-# u12 0.84, 0.83, 0.83, 0.81, 0.79, 0.72, 0.93, 0.90, 0.91
-# u16 0.62, 0.58, 0.58, 0.64, 0.69, 0.66, 0.58, 0.53, 0.89
+# u14 0.30, 0.36, 0.31, 0.57, 0.62, 0.77, 0.77, 0.79, 1.00
+# u13 0.77, 0.76, 0.75, 0.72, 0.70, 0.72, 0.74, 0.59, 0.89
+# u9 0.42, 0.38, 0.36, 0.70, 0.91, 0.89, 0.89, 0.86, 0.70
+# u11 0.72, 0.75, 0.80, 0.80, 0.77, 0.79, 0.79, 0.68, 0.34
+# u10 0.60, 0.63, 0.60, 0.54, 0.42, 0.41, 0.87, 0.81, 0.62
+# u15 0.48, 0.57, 0.62, 0.62, 0.58, 0.61, 0.58, 0.64, 0.79
+# u12 0.65, 0.76, 0.78, 0.70, 0.71, 0.57, 0.82, 0.90, 0.91
+# u16 0.51, 0.53, 0.58, 0.64, 0.69, 0.66, 0.58, 0.53, 0.89
 
-# Greedy  0.69, 0.70, 0.70, 0.74, 0.75, 0.78, 0.80, 0.77, 0.80
+# Greedy  0.56, 0.59, 0.60, 0.66, 0.67, 0.68, 0.75, 0.73, 0.77
 
-# Action  0 0.90, 0.86, 0.86, 0.86, 0.86, 0.98, 0.98, 0.96, 0.74
-# Action  1 0.00, 0.01, 0.00, 0.01, 0.01, 0.00, 0.01, 0.00, 0.00
-# Action  2 0.67, 0.67, 0.72, 0.81, 0.82, 0.81, 0.81, 0.80, 0.52
-# Action  3 0.25, 0.28, 0.35, 0.30, 0.30, 0.26, 0.23, 0.18, 0.09
-
+# Action  0 0.79, 0.84, 0.85, 0.83, 0.84, 0.93, 0.92, 0.91, 0.73
+# Action  1 0.04, 0.01, 0.00, 0.01, 0.01, 0.01, 0.01, 0.02, 0.00
+# Action  2 0.46, 0.49, 0.59, 0.72, 0.76, 0.71, 0.80, 0.75, 0.50
+# Action  3 0.20, 0.27, 0.28, 0.24, 0.22, 0.19, 0.21, 0.17, 0.07
 # Action  0 212.00, 184.62, 163.00, 137.38, 105.75, 80.88, 61.62, 45.75, 28.38
 # Action  1 9.25, 7.38, 6.12, 4.75, 4.00, 2.62, 2.25, 2.00, 1.25
 # Action  2 148.38, 139.75, 123.38, 111.25, 102.12, 89.12, 66.88, 38.00, 16.62
