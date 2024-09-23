@@ -22,7 +22,7 @@ import itertools
 
 #Class definition for the Actor-Critic model
 class ActorCritic(nn.Module):
-    def __init__(self,learning_rate,gamma):
+    def __init__(self,learning_rate,gamma, dataset):
         super(ActorCritic, self).__init__()
         # Class attributes
         self.data = []
@@ -30,7 +30,11 @@ class ActorCritic(nn.Module):
         self.gamma = gamma
 
         # Neural network architecture
-        self.fc1 = nn.Linear(9, 128)
+        if dataset == 'faa':
+            self.fc1 = nn.Linear(8, 128)
+        else:
+            self.fc1 = nn.Linear(9, 128)
+
         self.fc_pi = nn.Linear(128, 4)#actor
         self.fc_v = nn.Linear(128, 1)#critic
 
@@ -193,8 +197,8 @@ class Agent():
         
         # Calculating the number of occurance and prediction rate for each action
         granular_prediction = defaultdict()
-        # for keys, values in insight.items():
-        #     granular_prediction[keys] = (len(values), np.mean(values))
+        for keys, values in insight.items():
+            granular_prediction[keys] = (len(values), np.mean(values))
 
         return np.mean(test_predictions), granular_prediction
 
@@ -202,7 +206,7 @@ def get_user_name(raw_fname):
     user = Path(raw_fname).stem.split('-')[0]
     return user
 
-def training(train_files, epoch):
+def training(dataset, train_files, epoch, algorithm):
     child = os.getcwd()
     path = os.path.dirname(child) #get parent directory  
 
@@ -219,19 +223,22 @@ def training(train_files, epoch):
     for lr in learning_rates:
         for ga in gammas:
             accu = []
-            model = ActorCritic(lr, ga)
+            model = ActorCritic(lr, ga, dataset)
 
             for feedback_file in train_files:
                 user_name = get_user_name(feedback_file)
-                # print(user_name)
-                # excel_files = glob.glob(path + '/RawInteractions/faa_data/*.csv')
-                excel_files = glob.glob(path + '/RawInteractions/brightkite_data/*.csv')            
-                # print(excel_files)
+                if dataset == 'faa':
+                    excel_files = glob.glob(path + '/RawInteractions/faa_data/*.csv')
+                else:
+                    excel_files = glob.glob(path + '/RawInteractions/brightkite_data/*.csv')            
                 raw_file = [string for string in excel_files if user_name in string][0]
-                # print(raw_file)
+
                 env = environment5.environment5()
-                env.process_data('brightkite', raw_file, feedback_file, 'Actor-Critic') 
-                # env.process_data('faa', raw_file, feedback_file, 'Actor-Critic') 
+                if dataset == 'faa':
+                    env.process_data('faa', raw_file, feedback_file, algorithm) 
+                else:
+                    env.process_data('brightkite', raw_file, feedback_file, algorithm) 
+                    
                 agent = Agent(env, lr, ga, epoch)           
                         
                 model, accu_user = agent.train(model)
@@ -248,21 +255,24 @@ def training(train_files, epoch):
     # print("Training Accuracy", max_accu)
     return best_ac_model, best_lr, best_gamma, max_accu
 
-def testing(test_files, trained_ac_model, best_lr, best_gamma, algorithm):
+def testing(dataset, test_files, trained_ac_model, best_lr, best_gamma, algorithm):
     child = os.getcwd()
     path = os.path.dirname(child) #get parent directory  
 
     final_accu = []
     for feedback_file in test_files:
         user_name = get_user_name(feedback_file)
-        # print(user_name)
-        # excel_files = glob.glob(path + '/RawInteractions/faa_data/*.csv')
-        excel_files = glob.glob(path + '/RawInteractions/brightkite_data/*.csv')            
-        # print(excel_files)
+        if dataset == 'faa':
+            excel_files = glob.glob(path + '/RawInteractions/faa_data/*.csv')
+        else:
+            excel_files = glob.glob(path + '/RawInteractions/brightkite_data/*.csv')            
         raw_file = [string for string in excel_files if user_name in string][0]
+
         env = environment5.environment5()
-        env.process_data('brightkite', raw_file, feedback_file, 'Actor-Critic') 
-        # env.process_data('faa', raw_file, feedback_file, 'Actor-Critic') 
+        if dataset == 'faa':
+            env.process_data('faa', raw_file, feedback_file, algorithm) 
+        else:
+            env.process_data('brightkite', raw_file, feedback_file, algorithm) 
         
         agent = Agent(env, best_lr, best_gamma)           
         accu, _ = agent.test(trained_ac_model)
@@ -273,29 +283,46 @@ def testing(test_files, trained_ac_model, best_lr, best_gamma, algorithm):
     return np.mean(final_accu)
 
 if __name__ == '__main__':
-    final_output = []
-    env = environment5.environment5()
-    # user_list = env.user_list_faa
-    user_list = env.user_list_brightkite
+    datasets = ['brightkite', 'faa']
+    for d in datasets:
+        print("Dataset ", d)   
+        split_accs = [[] for _ in range(4)]
+        split_cnt = [[] for _ in range(4)]      
+        env = environment5.environment5()
+        
+        if d == 'faa':
+            user_list = env.user_list_faa
+        else:
+            user_list = env.user_list_brightkite
 
-    accuracies = []
-    X_train = []
-    X_test = []
+        accuracies = []
+        X_train = []
+        X_test = []
 
-    # Leave-One-Out Cross-Validation
-    for i, test_user_log in enumerate(tqdm(user_list)):
-        train_files = user_list[:i] + user_list[i+1:]  # All users except the ith one
-        # train_files, test_files = train_test_split(user_list, test_size=0.3, random_state=42)
-        trained_ac_model, best_lr, best_gamma, training_accuracy = training(train_files, 5)
-        X_train.append(training_accuracy)
-        # test user
-        test_files = [test_user_log]
-        testing_accu = testing(test_files, trained_ac_model, best_lr, best_gamma, 'Actor-Critic')
-        # print("Testing Accuracy ", accu)
-        X_test.append(testing_accu)
-        # accuracies.append(accu)
+        # Leave-One-Out Cross-Validation
+        for i, test_user_log in enumerate(tqdm(user_list)):
+            train_files = user_list[:i] + user_list[i+1:]  # All users except the ith one
+            # train_files, test_files = train_test_split(user_list, test_size=0.3, random_state=42)
+            trained_ac_model, best_lr, best_gamma, training_accuracy = training(d, train_files, 5, 'Actor-Critic')
+            X_train.append(training_accuracy)
+            # test user
+            test_files = [test_user_log]
+            testing_accu, gp = testing(d, test_files, trained_ac_model, best_lr, best_gamma, 'Actor-Critic')
+            
+            # print("Testing Accuracy ", accu)
+            for key, val in gp.items():
+                # print(key, val)
+                split_accs[key].append(val[1])
+                split_cnt[key].append(val[0])
 
-    train_accu = np.mean(X_train)
-    test_accu = np.mean(X_test)
-    print("Actor-Critic Training {:.2f}".format(train_accu))
-    print("Actor-Critic Testing {:.2f}".format(test_accu))
+            X_test.append(testing_accu)
+            # accuracies.append(accu)
+
+        # train_accu = np.mean(X_train)
+        test_accu = np.mean(X_test)
+        # print("Actor-Critic Training {:.2f}".format(train_accu))
+        print("Actor-Critic Testing {:.2f}".format(test_accu))
+
+        for i in range(4):
+            accu = round(np.sum(split_accs[i]) / np.sum(split_cnt[i]), 2)
+            print("Action {} Accuracy {}".format(i, accu)) 
