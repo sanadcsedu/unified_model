@@ -60,7 +60,7 @@ class Reinforce():
     def train(self, model):
         
         all_predictions=[]
-        for _ in range(10):
+        for _ in range(15):
             s = self.env.reset()
             s=np.array(s)
             done = False
@@ -79,7 +79,7 @@ class Reinforce():
 
                 s = s_prime
 
-                model.train_net()
+            model.train_net()
     
             all_predictions.append(np.mean(predictions))
 
@@ -114,7 +114,7 @@ class Reinforce():
         
         granular_prediction = defaultdict()
         for keys, values in insight.items():
-            granular_prediction[keys] = (len(values), np.mean(values))
+            granular_prediction[keys] = (len(values), np.sum(values))
 
         return np.mean(test_accuracies), granular_prediction
 
@@ -203,7 +203,8 @@ def testing(dataset, test_files, trained_ac_model, best_lr, best_gamma, best_tau
 
 
 if __name__ == '__main__':
-    datasets = ['brightkite', 'faa']
+    # datasets = ['brightkite', 'faa']
+    datasets = ['faa']
     for d in datasets:
         print("Dataset ", d)   
         split_accs = [[] for _ in range(4)]

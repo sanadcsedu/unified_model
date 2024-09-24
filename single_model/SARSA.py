@@ -89,7 +89,7 @@ class SARSA:
 
         granular_prediction = defaultdict()
         for keys, values in insight.items():
-            granular_prediction[keys] = (len(values), np.mean(values))
+            granular_prediction[keys] = (len(values), np.sum(values))
 
         return np.mean(stats), granular_prediction
 
@@ -169,12 +169,12 @@ def testing(dataset, test_files, trained_Q, alpha, eps, discount, algorithm):
             env.process_data('brightkite', raw_file, feedback_file, algorithm) 
 
         model = SARSA()
-        accu, _ = model.test(env, Q, discount, alpha, eps)
+        accu, gp = model.test(env, Q, discount, alpha, eps)
         # pdb.set_trace()
         # print("testing", accu)
         final_accu.append(accu)
     # print("Q-Learning, {}, {:.2f}".format(k, np.mean(final_accu)))
-    return np.mean(final_accu)
+    return np.mean(final_accu), gp
 
 if __name__ == "__main__":
     datasets = ['brightkite', 'faa']
@@ -194,15 +194,19 @@ if __name__ == "__main__":
         X_test = []
 
         # Leave-One-Out Cross-Validation
-        for i, test_user_log in enumerate(tqdm(user_list)):
+        for i, test_user_log in enumerate((user_list)):
             train_files = user_list[:i] + user_list[i+1:]  # All users except the ith one
             # train_files, test_files = train_test_split(user_list, test_size=0.3, random_state=42)
             trained_Q, best_alpha, best_eps, best_discount, training_accuracy = training(d, train_files, 5, 'SARSA')
             X_train.append(training_accuracy)
             # test user
             test_files = [test_user_log]
-            testing_accu = testing(d, test_files, trained_Q, best_alpha, best_eps, best_discount, 'SARSA')
-            # print("Testing Accuracy ", accu)
+            testing_accu, gp = testing(d, test_files, trained_Q, best_alpha, best_eps, best_discount, 'SARSA')
+
+            for key, val in gp.items():
+                split_accs[key].append(val[1])
+                split_cnt[key].append(val[0])
+
             X_test.append(testing_accu)
             # accuracies.append(accu)
 

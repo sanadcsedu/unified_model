@@ -8,12 +8,12 @@ from sklearn.metrics import accuracy_score
 import environment5 as environment5
 from tqdm import tqdm
 import pdb 
-from pathlib import Path
-import json 
-import glob 
 from collections import defaultdict
+import glob 
+from pathlib import Path
 
-class OnlineSVM:
+
+class OfflineSVM:
     def __init__(self, max_iter=1000):
         """
         Initializes the Online SVM model using SGDClassifier.
@@ -27,17 +27,22 @@ class OnlineSVM:
         """
         self.model.fit(X_train, y_train)
 
+
     def evaluate(self, X_test, y_test):
         """
         Evaluate the model on the test data and return the accuracy.
         """
+        #one shot prediction
+        # y_pred = self.model.predict(X_test)
+        # all_accuracies = accuracy_score(y_test, y_pred)
+
+        # return all_accuracies, y_pred
         all_accuracies = []
         insight = defaultdict(list)
         for i in range(len(X_test)):
             y_pred = self.model.predict([X_test[i]])
             accuracy = accuracy_score([y_test[i]], y_pred)
             insight[y_test[i]].append(accuracy)
-            self.model.partial_fit([X_test[i]], [y_test[i]])
             all_accuracies.append(accuracy)
 
         granular_prediction = defaultdict()
@@ -45,16 +50,6 @@ class OnlineSVM:
             granular_prediction[keys] = (len(values), np.sum(values))
 
         return np.mean(all_accuracies), granular_prediction
-
-    def evaluate2(self, X_test, y_test):
-        """
-        Evaluate the model on the test data and return the accuracy.
-        """
-        #one shot prediction
-        y_pred = self.model.predict(X_test)
-        all_accuracies = accuracy_score(y_test, y_pred)
-
-        return all_accuracies, y_pred
 
 def get_user_name(raw_fname):
     user = Path(raw_fname).stem.split('-')[0]
@@ -98,7 +93,7 @@ def run_experiment(dataset, user_list, algorithm):
         y_train = np.array(y_train)
         # print(len(X_train))
         # Initialize and train the OnlineSVM model
-        model = OnlineSVM()
+        model = OfflineSVM()
         model.train(X_train, y_train)
 
         # Test on the left-out user

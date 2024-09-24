@@ -198,7 +198,7 @@ class Agent():
         # Calculating the number of occurance and prediction rate for each action
         granular_prediction = defaultdict()
         for keys, values in insight.items():
-            granular_prediction[keys] = (len(values), np.mean(values))
+            granular_prediction[keys] = (len(values), np.sum(values))
 
         return np.mean(test_predictions), granular_prediction
 
@@ -275,12 +275,12 @@ def testing(dataset, test_files, trained_ac_model, best_lr, best_gamma, algorith
             env.process_data('brightkite', raw_file, feedback_file, algorithm) 
         
         agent = Agent(env, best_lr, best_gamma)           
-        accu, _ = agent.test(trained_ac_model)
+        accu, gp = agent.test(trained_ac_model)
         # pdb.set_trace()
         # print("testing", accu)
         final_accu.append(accu)
     
-    return np.mean(final_accu)
+    return np.mean(final_accu), gp
 
 if __name__ == '__main__':
     datasets = ['brightkite', 'faa']
@@ -300,7 +300,7 @@ if __name__ == '__main__':
         X_test = []
 
         # Leave-One-Out Cross-Validation
-        for i, test_user_log in enumerate(tqdm(user_list)):
+        for i, test_user_log in enumerate((user_list)):
             train_files = user_list[:i] + user_list[i+1:]  # All users except the ith one
             # train_files, test_files = train_test_split(user_list, test_size=0.3, random_state=42)
             trained_ac_model, best_lr, best_gamma, training_accuracy = training(d, train_files, 5, 'Actor-Critic')

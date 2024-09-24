@@ -8,54 +8,54 @@ import multiprocessing
 import glob 
 import os 
 from pathlib import Path
-from tqdm import tqdm
+import pdb
 
 eps=1e-35
-class Greedy:
+class Bayesian:
     def __init__(self):
-        """Initializes the Greedy model."""
-        # self.freq = defaultdict(lambda: defaultdict(float))
-        self.reward = defaultdict(lambda: defaultdict(float))
+        self.freq = defaultdict(lambda: defaultdict(float))
+        # self.reward = defaultdict(lambda: defaultdict(float))
 
     def train(self, env):
         length = len(env.mem_action)
-
-        for i in range(length):
-            # self.freq[env.mem_states[i]][env.mem_action[i]] += 1
-            self.reward[env.mem_states[i]][env.mem_action[i]] += env.mem_reward[i] + eps
-
-        # Normalizing
-        # for states in self.reward:
-        #     sum = 0
-        #     for actions in self.reward[states]:
-        #         sum += self.reward[states][actions]
-        #     for actions in self.reward[states]:
-        #         self.reward[states][actions] /= sum
         
-
+        for i in range(length):
+            self.freq[env.mem_states[i]][env.mem_action[i]] += 1
+        
     def test(self, env):
         # Checking accuracy on the remaining data:
-        current_model = self.reward
+        current_model = self.freq
         accuracy = 0
         denom = 0
         insight = defaultdict(list)
         length = len(env.mem_action)
         for i in range(length):
             denom += 1
-            try: #Finding the most rewarding action in the current state
-                _max = max(current_model[env.mem_states[i]], key=current_model[env.mem_states[i]].get)
-            except ValueError: #Randomly picking an action if it was used previously in current state 
+            try: #Picking an Action in Bayesian Way
+                # actions = ['pan', 'zoom', 'brush', 'range select']
+                actions = {'pan': 0, 'zoom': 1, 'brush': 2, 'range select': 3}
+                freqs = []
+                for a, v in actions.items():
+                    if v in self.freq[env.mem_states[i]]:
+                        freqs.append(self.freq[env.mem_states[i]][v])
+                    else:
+                        freqs.append(1)
+                _max = random.choices(list(actions.values()), weights=freqs, k=1)[0]
+            except IndexError:
                 _max= random.choice([0, 1, 2, 3])
-
+            
             if _max == env.mem_action[i]:
                 accuracy += 1
+                # self.reward[env.mem_states[i]][_max] += env.mem_reward[i]
+                # self.freq[env.mem_states[i]][env.mem_action[i]] += 1
                 insight[env.mem_action[i]].append(1)
             else:
                 insight[env.mem_action[i]].append(0)
-            current_model[env.mem_states[i]][_max] += env.mem_reward[i]
 
+            self.freq[env.mem_states[i]][env.mem_action[i]] += 1
+        
         accuracy /= denom
-        self.reward.clear()
+        self.freq.clear()
         granular_prediction = defaultdict()
         for keys, values in insight.items():
             granular_prediction[keys] = (len(values), np.sum(values))
@@ -70,7 +70,7 @@ def training(dataset, train_files):
     child = os.getcwd()
     path = os.path.dirname(child) #get parent directory         
     
-    model = Greedy()
+    model = Bayesian()
 
     for feedback_file in train_files:
         user_name = get_user_name(feedback_file)
@@ -153,7 +153,7 @@ if __name__ == '__main__':
             # accuracies.append(accu)
 
         test_accu = np.mean(X_test)
-        print("Greedy Testing {:.2f}".format(test_accu))
+        print("Bayesian Testing {:.2f}".format(test_accu))
 
         total = 0
         for i in range(4):
