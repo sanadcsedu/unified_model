@@ -45,12 +45,11 @@ class Greedy:
 
             if _max == env.mem_action[i]:
                 accuracy += 1
-                self.reward[env.mem_states[i]][_max] += env.mem_reward[i]
                 insight[env.mem_action[i]].append(1)
             else:
                 insight[env.mem_action[i]].append(0)
             
-            # self.reward[env.mem_states[i]][_max] += env.mem_reward[i]
+            self.reward[env.mem_states[i]][_max] += env.mem_reward[i]
 
         accuracy /= denom
         self.reward.clear()

@@ -34,7 +34,7 @@ class Policy(nn.Module):
     def forward(self, x):
         x = F.relu(self.fc1(x))
         x = x / self.temperature
-        x = F.softmax(self.fc2(x), dim=0)
+        x = F.softmax(self.fc2(x), dim=-1)
         return x
 
     def put_data(self, item):
@@ -44,22 +44,22 @@ class Policy(nn.Module):
         R = 0
         entropy_term = 0  # For entropy regularization
 
-        self.optimizer.zero_grad()
         for r, prob in self.data[::-1]:
             prob = torch.clamp(prob, min=1e-8, max = 1e+8)
 
             R = r + self.gamma * R
             loss = -torch.log(prob) * R
-            # loss = torch.clamp(loss, min=1e-8, max = 1e+8) #new
              # Entropy regularization to encourage exploration
             entropy_term += -(prob * torch.log(prob + 1e-8))
-
-            loss.backward(retain_graph=True)
-        
+            
         # Adding entropy regularization term to the loss
-        loss = loss + 0.01 * entropy_term.mean()
-        self.optimizer.step()
-    
+        loss = loss + 0.001 * entropy_term.mean()
+        loss.backward(retain_graph=True)
+        
+        # loss = torch.clamp(loss, min=1e-8, max = 1e+8) #new
+                
+        self.optimizer.zero_grad()
+        self.optimizer.step()    
         self.data = []
 
 
@@ -72,7 +72,7 @@ class Reinforce():
     def train(self, model):
         
         all_predictions=[]
-        for _ in range(5):
+        for _ in range(10):
             s = self.env.reset()
             s=np.array(s)
             done = False

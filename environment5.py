@@ -42,10 +42,10 @@ class environment5:
     def get_state(self, task, visualization, high_level_state, algo):
         ##################Uses combination of visualization and mental states as features ##############
         if task == 'faa':
-            state = np.zeros(8, dtype=np.int)
+            state = np.zeros(8, dtype=np.int32)
             vizs = ['bar-4', 'bar-2', 'hist-3', 'scatterplot-0-1']
         else:
-            state = np.zeros(9, dtype=np.int)
+            state = np.zeros(9, dtype=np.int32)
             vizs = ['bar-5', 'hist-2', 'hist-3', 'hist-4', 'geo-0-1']
         for idx, v in enumerate(vizs):
             if v == visualization:
